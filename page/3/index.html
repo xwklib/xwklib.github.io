@@ -1,1275 +1,560 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.4.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
-  <link rel="mask-icon" href="/images/logo.svg" color="#222">
-
-<link rel="stylesheet" href="/css/main.css">
-
-
-<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
-
-<script id="hexo-configurations">
-    var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"wkxuan.cn","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
-  </script>
-
-  <meta name="description" content="这是一行励志的话">
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>What a nice Blog - 愿天堂没有ddl</title><meta name="author"><meta name="copyright"><meta name="format-detection" content="telephone=no"><meta name="theme-color"><meta name="description" content="这是一行励志的话">
 <meta property="og:type" content="website">
 <meta property="og:title" content="What a nice Blog">
 <meta property="og:url" content="https://wkxuan.cn/page/3/index.html">
 <meta property="og:site_name" content="What a nice Blog">
 <meta property="og:description" content="这是一行励志的话">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://xwksir-1302576567.cos.ap-nanjing.myqcloud.com/images/pig (2).jpg">
 <meta property="article:author" content="XXX">
 <meta property="article:tag" content="关键字">
 <meta name="twitter:card" content="summary">
-
-<link rel="canonical" href="https://wkxuan.cn/page/3/">
-
-
-<script id="page-configurations">
-  // https://hexo.io/docs/variables.html
-  CONFIG.page = {
-    sidebar: "",
-    isHome : true,
-    isPost : false,
-    lang   : 'zh-CN'
-  };
-</script>
-
-  <title>What a nice Blog</title>
-  
-
-
-
-
-
-
-  <noscript>
-  <style>
-  .use-motion .brand,
-  .use-motion .menu-item,
-  .sidebar-inner,
-  .use-motion .post-block,
-  .use-motion .pagination,
-  .use-motion .comments,
-  .use-motion .post-header,
-  .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
-
-  .use-motion .site-title,
-  .use-motion .site-subtitle {
-    opacity: initial;
-    top: initial;
+<meta name="twitter:image" content="https://xwksir-1302576567.cos.ap-nanjing.myqcloud.com/images/pig (2).jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://wkxuan.cn/page/3/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: {"limitDay":180,"position":"top","messagePrev":"这篇文章已经","messageNext":"天没有更新了，相关内容【可能】已经过时，请留意。"},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = { 
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2022-02-21 15:04:37'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
   }
 
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
-  </style>
-</noscript>
-
-</head>
-
-<body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
-    <div class="headband"></div>
-
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切换导航栏">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
-    </div>
-  </div>
-
-  <div class="site-meta">
-
-    <a href="/" class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">What a nice Blog</h1>
-      <span class="logo-line-after"><i></i></span>
-    </a>
-      <p class="site-subtitle" itemprop="description">愿天堂没有ddl</p>
-  </div>
-
-  <div class="site-nav-right">
-    <div class="toggle popup-trigger">
-        <i class="fa fa-search fa-fw fa-lg"></i>
-    </div>
-  </div>
-</div>
-
-
-
-
-<nav class="site-nav">
-  <ul id="menu" class="main-menu menu">
-        <li class="menu-item menu-item-home">
-
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
-
-  </li>
-        <li class="menu-item menu-item-about">
-
-    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
-
-  </li>
-        <li class="menu-item menu-item-tags">
-
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
-
-  </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
-
-  </li>
-      <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
-        </a>
-      </li>
-  </ul>
-</nav>
-
-
-
-  <div class="search-pop-overlay">
-    <div class="popup search-popup">
-        <div class="search-header">
-  <span class="search-icon">
-    <i class="fa fa-search"></i>
-  </span>
-  <div class="search-input-container"></div>
-  <span class="popup-btn-close">
-    <i class="fa fa-times-circle"></i>
-  </span>
-</div>
-<div class="algolia-results">
-  <div id="algolia-stats"></div>
-  <div id="algolia-hits"></div>
-  <div id="algolia-pagination" class="algolia-pagination"></div>
-</div>
-
-      
-    </div>
-  </div>
-
-</div>
-    </header>
-
-    
-  <div class="back-to-top">
-    <i class="fa fa-arrow-up"></i>
-    <span>0%</span>
-  </div>
-
-  <a href="https://github.com/xdefiner" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
-
-
-    <main class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
-
-          <div class="content index posts-expand">
-            
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://wkxuan.cn/2020/12/18/HCIA-Kunpeng-Application-Developer-%E5%8D%8E%E4%B8%BA%E8%AE%A4%E8%AF%81%E9%B2%B2%E9%B9%8F%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91%E5%B7%A5%E7%A8%8B%E5%B8%88%E5%9C%A8%E7%BA%BF%E8%AF%BE%E7%A8%8B-%E6%B5%8B%E4%B8%80%E6%B5%8B%E7%AD%94%E6%A1%88/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://xwksir-1302576567.cos.ap-nanjing.myqcloud.com/images/pig (2).jpg">
-      <meta itemprop="name" content="XXX">
-      <meta itemprop="description" content="这是一行励志的话">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="What a nice Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/12/18/HCIA-Kunpeng-Application-Developer-%E5%8D%8E%E4%B8%BA%E8%AE%A4%E8%AF%81%E9%B2%B2%E9%B9%8F%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91%E5%B7%A5%E7%A8%8B%E5%B8%88%E5%9C%A8%E7%BA%BF%E8%AF%BE%E7%A8%8B-%E6%B5%8B%E4%B8%80%E6%B5%8B%E7%AD%94%E6%A1%88/" class="post-title-link" itemprop="url">HCIA-Kunpeng Application Developer 华为认证鲲鹏应用开发工程师在线课程 测一测答案</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-12-18 21:45:47" itemprop="dateCreated datePublished" datetime="2020-12-18T21:45:47+08:00">2020-12-18</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-12-30 22:17:04" itemprop="dateModified" datetime="2020-12-30T22:17:04+08:00">2020-12-30</time>
-              </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2020/12/18/HCIA-Kunpeng-Application-Developer-%E5%8D%8E%E4%B8%BA%E8%AE%A4%E8%AF%81%E9%B2%B2%E9%B9%8F%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91%E5%B7%A5%E7%A8%8B%E5%B8%88%E5%9C%A8%E7%BA%BF%E8%AF%BE%E7%A8%8B-%E6%B5%8B%E4%B8%80%E6%B5%8B%E7%AD%94%E6%A1%88/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/12/18/HCIA-Kunpeng-Application-Developer-%E5%8D%8E%E4%B8%BA%E8%AE%A4%E8%AF%81%E9%B2%B2%E9%B9%8F%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91%E5%B7%A5%E7%A8%8B%E5%B8%88%E5%9C%A8%E7%BA%BF%E8%AF%BE%E7%A8%8B-%E6%B5%8B%E4%B8%80%E6%B5%8B%E7%AD%94%E6%A1%88/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>手动复制粘贴的</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/12/18/HCIA-Kunpeng-Application-Developer-%E5%8D%8E%E4%B8%BA%E8%AE%A4%E8%AF%81%E9%B2%B2%E9%B9%8F%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91%E5%B7%A5%E7%A8%8B%E5%B8%88%E5%9C%A8%E7%BA%BF%E8%AF%BE%E7%A8%8B-%E6%B5%8B%E4%B8%80%E6%B5%8B%E7%AD%94%E6%A1%88/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://wkxuan.cn/2020/12/13/%E8%AF%A5%E8%A1%A5%E4%B8%80%E8%A1%A5Markdown%E8%AF%AD%E6%B3%95%E4%BA%86/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://xwksir-1302576567.cos.ap-nanjing.myqcloud.com/images/pig (2).jpg">
-      <meta itemprop="name" content="XXX">
-      <meta itemprop="description" content="这是一行励志的话">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="What a nice Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/12/13/%E8%AF%A5%E8%A1%A5%E4%B8%80%E8%A1%A5Markdown%E8%AF%AD%E6%B3%95%E4%BA%86/" class="post-title-link" itemprop="url">该补一补Markdown语法了</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-12-13 20:10:39" itemprop="dateCreated datePublished" datetime="2020-12-13T20:10:39+08:00">2020-12-13</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-01-23 11:19:02" itemprop="dateModified" datetime="2021-01-23T11:19:02+08:00">2021-01-23</time>
-              </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2020/12/13/%E8%AF%A5%E8%A1%A5%E4%B8%80%E8%A1%A5Markdown%E8%AF%AD%E6%B3%95%E4%BA%86/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/12/13/%E8%AF%A5%E8%A1%A5%E4%B8%80%E8%A1%A5Markdown%E8%AF%AD%E6%B3%95%E4%BA%86/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>包括但不限于：标题、字体、分割线、图片、超链接、列表、表格、代码、引用等</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/12/13/%E8%AF%A5%E8%A1%A5%E4%B8%80%E8%A1%A5Markdown%E8%AF%AD%E6%B3%95%E4%BA%86/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://wkxuan.cn/2020/12/13/VS2019-%E6%B0%B8%E4%B9%85-%E9%85%8D%E7%BD%AEopencv%E8%B8%A9%E8%BF%87%E7%9A%84%E5%9D%91/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://xwksir-1302576567.cos.ap-nanjing.myqcloud.com/images/pig (2).jpg">
-      <meta itemprop="name" content="XXX">
-      <meta itemprop="description" content="这是一行励志的话">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="What a nice Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/12/13/VS2019-%E6%B0%B8%E4%B9%85-%E9%85%8D%E7%BD%AEopencv%E8%B8%A9%E8%BF%87%E7%9A%84%E5%9D%91/" class="post-title-link" itemprop="url">关于VS2019“永久”配置opencv-3.4.12-vc14_vc15的问题</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-12-13 19:38:20" itemprop="dateCreated datePublished" datetime="2020-12-13T19:38:20+08:00">2020-12-13</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-01-23 11:16:46" itemprop="dateModified" datetime="2021-01-23T11:16:46+08:00">2021-01-23</time>
-              </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2020/12/13/VS2019-%E6%B0%B8%E4%B9%85-%E9%85%8D%E7%BD%AEopencv%E8%B8%A9%E8%BF%87%E7%9A%84%E5%9D%91/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/12/13/VS2019-%E6%B0%B8%E4%B9%85-%E9%85%8D%E7%BD%AEopencv%E8%B8%A9%E8%BF%87%E7%9A%84%E5%9D%91/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Visual Studio2019配置opencv（其实也包括所有相关文件的配置）</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/12/13/VS2019-%E6%B0%B8%E4%B9%85-%E9%85%8D%E7%BD%AEopencv%E8%B8%A9%E8%BF%87%E7%9A%84%E5%9D%91/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://wkxuan.cn/2020/12/02/%E5%AE%89%E8%A3%85Oracle%E6%97%B6%E7%9A%84%E6%83%A8%E7%97%9B%E6%95%99%E8%AE%AD/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://xwksir-1302576567.cos.ap-nanjing.myqcloud.com/images/pig (2).jpg">
-      <meta itemprop="name" content="XXX">
-      <meta itemprop="description" content="这是一行励志的话">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="What a nice Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/12/02/%E5%AE%89%E8%A3%85Oracle%E6%97%B6%E7%9A%84%E6%83%A8%E7%97%9B%E6%95%99%E8%AE%AD/" class="post-title-link" itemprop="url">安装Oracle时的惨痛教训</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-12-02 22:30:42" itemprop="dateCreated datePublished" datetime="2020-12-02T22:30:42+08:00">2020-12-02</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-01-24 10:48:28" itemprop="dateModified" datetime="2021-01-24T10:48:28+08:00">2021-01-24</time>
-              </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2020/12/02/%E5%AE%89%E8%A3%85Oracle%E6%97%B6%E7%9A%84%E6%83%A8%E7%97%9B%E6%95%99%E8%AE%AD/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/12/02/%E5%AE%89%E8%A3%85Oracle%E6%97%B6%E7%9A%84%E6%83%A8%E7%97%9B%E6%95%99%E8%AE%AD/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>这是一篇看起来就很蛋疼的文章</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/12/02/%E5%AE%89%E8%A3%85Oracle%E6%97%B6%E7%9A%84%E6%83%A8%E7%97%9B%E6%95%99%E8%AE%AD/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://wkxuan.cn/2020/11/22/C%E8%AF%AD%E8%A8%80%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A62/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://xwksir-1302576567.cos.ap-nanjing.myqcloud.com/images/pig (2).jpg">
-      <meta itemprop="name" content="XXX">
-      <meta itemprop="description" content="这是一行励志的话">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="What a nice Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/11/22/C%E8%AF%AD%E8%A8%80%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A62/" class="post-title-link" itemprop="url">C语言格式化字符</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-11-22 19:37:01" itemprop="dateCreated datePublished" datetime="2020-11-22T19:37:01+08:00">2020-11-22</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-01-23 11:17:46" itemprop="dateModified" datetime="2021-01-23T11:17:46+08:00">2021-01-23</time>
-              </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2020/11/22/C%E8%AF%AD%E8%A8%80%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A62/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/11/22/C%E8%AF%AD%E8%A8%80%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A62/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>C语言-格式输入输出中“%d,%o,%x,%e,%f”等的含义</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/11/22/C%E8%AF%AD%E8%A8%80%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A62/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://wkxuan.cn/2020/10/29/%E5%B7%A5%E7%A8%8B%E4%B8%8E%E7%A4%BE%E4%BC%9A%E7%AC%AC%E4%B8%83%E3%80%81%E5%85%AB%E7%AB%A0%E7%AD%94%E6%A1%88/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://xwksir-1302576567.cos.ap-nanjing.myqcloud.com/images/pig (2).jpg">
-      <meta itemprop="name" content="XXX">
-      <meta itemprop="description" content="这是一行励志的话">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="What a nice Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/10/29/%E5%B7%A5%E7%A8%8B%E4%B8%8E%E7%A4%BE%E4%BC%9A%E7%AC%AC%E4%B8%83%E3%80%81%E5%85%AB%E7%AB%A0%E7%AD%94%E6%A1%88/" class="post-title-link" itemprop="url">工程与社会第七、八章答案</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-10-29 17:11:30" itemprop="dateCreated datePublished" datetime="2020-10-29T17:11:30+08:00">2020-10-29</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-12-30 22:17:08" itemprop="dateModified" datetime="2020-12-30T22:17:08+08:00">2020-12-30</time>
-              </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2020/10/29/%E5%B7%A5%E7%A8%8B%E4%B8%8E%E7%A4%BE%E4%BC%9A%E7%AC%AC%E4%B8%83%E3%80%81%E5%85%AB%E7%AB%A0%E7%AD%94%E6%A1%88/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/10/29/%E5%B7%A5%E7%A8%8B%E4%B8%8E%E7%A4%BE%E4%BC%9A%E7%AC%AC%E4%B8%83%E3%80%81%E5%85%AB%E7%AB%A0%E7%AD%94%E6%A1%88/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>注：此条blog内容全部从公众号“答题小伙伴“获得，如果有人因为借鉴本文答题出错，博主概不负责</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/10/29/%E5%B7%A5%E7%A8%8B%E4%B8%8E%E7%A4%BE%E4%BC%9A%E7%AC%AC%E4%B8%83%E3%80%81%E5%85%AB%E7%AB%A0%E7%AD%94%E6%A1%88/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://wkxuan.cn/2020/10/29/%E5%B7%A5%E7%A8%8B%E4%B8%8E%E7%A4%BE%E4%BC%9A%E7%AC%AC%E4%B8%89%E3%80%81%E5%9B%9B%E7%AB%A0%E7%AD%94%E6%A1%88/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://xwksir-1302576567.cos.ap-nanjing.myqcloud.com/images/pig (2).jpg">
-      <meta itemprop="name" content="XXX">
-      <meta itemprop="description" content="这是一行励志的话">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="What a nice Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/10/29/%E5%B7%A5%E7%A8%8B%E4%B8%8E%E7%A4%BE%E4%BC%9A%E7%AC%AC%E4%B8%89%E3%80%81%E5%9B%9B%E7%AB%A0%E7%AD%94%E6%A1%88/" class="post-title-link" itemprop="url">工程与社会第三、四章答案</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-10-29 17:11:30" itemprop="dateCreated datePublished" datetime="2020-10-29T17:11:30+08:00">2020-10-29</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-12-30 22:17:12" itemprop="dateModified" datetime="2020-12-30T22:17:12+08:00">2020-12-30</time>
-              </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2020/10/29/%E5%B7%A5%E7%A8%8B%E4%B8%8E%E7%A4%BE%E4%BC%9A%E7%AC%AC%E4%B8%89%E3%80%81%E5%9B%9B%E7%AB%A0%E7%AD%94%E6%A1%88/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/10/29/%E5%B7%A5%E7%A8%8B%E4%B8%8E%E7%A4%BE%E4%BC%9A%E7%AC%AC%E4%B8%89%E3%80%81%E5%9B%9B%E7%AB%A0%E7%AD%94%E6%A1%88/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>注：此条blog内容全部从公众号“答题小伙伴“获得，如果有人因为借鉴本文答题出错，博主概不负责</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/10/29/%E5%B7%A5%E7%A8%8B%E4%B8%8E%E7%A4%BE%E4%BC%9A%E7%AC%AC%E4%B8%89%E3%80%81%E5%9B%9B%E7%AB%A0%E7%AD%94%E6%A1%88/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://wkxuan.cn/2020/07/16/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://xwksir-1302576567.cos.ap-nanjing.myqcloud.com/images/pig (2).jpg">
-      <meta itemprop="name" content="XXX">
-      <meta itemprop="description" content="这是一行励志的话">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="What a nice Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/07/16/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-07-16 00:00:00" itemprop="dateCreated datePublished" datetime="2020-07-16T00:00:00+08:00">2020-07-16</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-01-08 16:56:18" itemprop="dateModified" datetime="2022-01-08T16:56:18+08:00">2022-01-08</time>
-              </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2020/07/16/hello-world/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/07/16/hello-world/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/07/16/hello-world/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://wkxuan.cn/2020/07/05/%E5%9F%9F%E5%90%8D%E7%9A%84%E8%B4%AD%E4%B9%B0%E5%8F%8A%E4%BD%BF%E7%94%A8/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://xwksir-1302576567.cos.ap-nanjing.myqcloud.com/images/pig (2).jpg">
-      <meta itemprop="name" content="XXX">
-      <meta itemprop="description" content="这是一行励志的话">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="What a nice Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/07/05/%E5%9F%9F%E5%90%8D%E7%9A%84%E8%B4%AD%E4%B9%B0%E5%8F%8A%E4%BD%BF%E7%94%A8/" class="post-title-link" itemprop="url">域名的购买及使用</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-07-05 15:32:13" itemprop="dateCreated datePublished" datetime="2020-07-05T15:32:13+08:00">2020-07-05</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-01-23 11:18:04" itemprop="dateModified" datetime="2021-01-23T11:18:04+08:00">2021-01-23</time>
-              </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2020/07/05/%E5%9F%9F%E5%90%8D%E7%9A%84%E8%B4%AD%E4%B9%B0%E5%8F%8A%E4%BD%BF%E7%94%A8/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/07/05/%E5%9F%9F%E5%90%8D%E7%9A%84%E8%B4%AD%E4%B9%B0%E5%8F%8A%E4%BD%BF%E7%94%A8/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>很多网站都提供域名的购买，这里提供了<a target="_blank" rel="noopener" href="https://cloud.tencent.com/">腾讯云</a>（也就是这篇文章啦）和<a target="_blank" rel="noopener" href="https://www.godaddy.com/">godaddy</a>（b站视频）两个，取其一就好。本文仅供借鉴</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/07/05/%E5%9F%9F%E5%90%8D%E7%9A%84%E8%B4%AD%E4%B9%B0%E5%8F%8A%E4%BD%BF%E7%94%A8/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://wkxuan.cn/2020/06/06/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2-%E7%BB%B4%E6%8A%A4/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://xwksir-1302576567.cos.ap-nanjing.myqcloud.com/images/pig (2).jpg">
-      <meta itemprop="name" content="XXX">
-      <meta itemprop="description" content="这是一行励志的话">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="What a nice Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/06/06/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2-%E7%BB%B4%E6%8A%A4/" class="post-title-link" itemprop="url">搭建博客全过程</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-06-06 17:53:13" itemprop="dateCreated datePublished" datetime="2020-06-06T17:53:13+08:00">2020-06-06</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-01-23 11:18:34" itemprop="dateModified" datetime="2021-01-23T11:18:34+08:00">2021-01-23</time>
-              </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2020/06/06/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2-%E7%BB%B4%E6%8A%A4/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/06/06/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2-%E7%BB%B4%E6%8A%A4/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>适合小白的基础教程</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/06/06/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2-%E7%BB%B4%E6%8A%A4/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
-  </nav>
-
-
-
-          </div>
-          
-
-<script>
-  window.addEventListener('tabs:register', () => {
-    let { activeClass } = CONFIG.comments;
-    if (CONFIG.comments.storage) {
-      activeClass = localStorage.getItem('comments_active') || activeClass;
-    }
-    if (activeClass) {
-      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
-      if (activeTab) {
-        activeTab.click();
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
       }
     }
-  });
-  if (CONFIG.comments.storage) {
-    window.addEventListener('tabs:click', event => {
-      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-      let commentClass = event.target.classList[1];
-      localStorage.setItem('comments_active', commentClass);
-    });
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    })(window)</script><link rel="stylesheet" href="/self/duotone.css"><link rel="stylesheet" href="/css/xwksir.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/css/icon.css" media="defer" onload="this.media='all'"><meta name="generator" content="Hexo 5.4.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" data-lazy-src="https://xwksir-1302576567.cos.ap-nanjing.myqcloud.com/images/pig (2).jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">30</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">16</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 清单</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('https://xwksir-1302576567.cos.ap-nanjing.myqcloud.com/images/day01.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">What a nice Blog</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 清单</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">What a nice Blog</h1><div id="site-subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2532560155&amp;site=qq&amp;menu=yes" target="_blank" title="QQ"><i class="iconfont icon-qq"></i></a><a class="social-icon" href="https://github.com/xdefiner" target="_blank" title="Github"><i class="iconfont icon-github"></i></a><a class="social-icon" href="https://weibo.com/u/6337592888/home?wvr=5" target="_blank" title="WeiBo"><i class="iconfont icon-weibo"></i></a><a class="social-icon" href="https://space.bilibili.com/436407790" target="_blank" title="bilibili"><i class="iconfont icon-bilibili-fill"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/12/18/HCIA-Kunpeng-Application-Developer-%E5%8D%8E%E4%B8%BA%E8%AE%A4%E8%AF%81%E9%B2%B2%E9%B9%8F%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91%E5%B7%A5%E7%A8%8B%E5%B8%88%E5%9C%A8%E7%BA%BF%E8%AF%BE%E7%A8%8B-%E6%B5%8B%E4%B8%80%E6%B5%8B%E7%AD%94%E6%A1%88/" title="HCIA-Kunpeng Application Developer 华为认证鲲鹏应用开发工程师在线课程 测一测答案">     <img class="post_bg" data-lazy-src="https://xwksir-1302576567.cos.ap-nanjing.myqcloud.com/images/a.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="HCIA-Kunpeng Application Developer 华为认证鲲鹏应用开发工程师在线课程 测一测答案"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/12/18/HCIA-Kunpeng-Application-Developer-%E5%8D%8E%E4%B8%BA%E8%AE%A4%E8%AF%81%E9%B2%B2%E9%B9%8F%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91%E5%B7%A5%E7%A8%8B%E5%B8%88%E5%9C%A8%E7%BA%BF%E8%AF%BE%E7%A8%8B-%E6%B5%8B%E4%B8%80%E6%B5%8B%E7%AD%94%E6%A1%88/" title="HCIA-Kunpeng Application Developer 华为认证鲲鹏应用开发工程师在线课程 测一测答案">HCIA-Kunpeng Application Developer 华为认证鲲鹏应用开发工程师在线课程 测一测答案</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-12-18T13:45:47.000Z" title="发表于 2020-12-18 21:45:47">2020-12-18</time></span></div><div class="content">手动复制粘贴的
+
+第一章
+单选题：
+    1. 以下不属于鲲鹏920处理器特点的是？
+
+    多业务场景化
+    多核高并发
+    统一达芬奇架构和指令集
+    兼容ARM生态
+    答案：C
+
+    2. 鲲鹏伙伴生态计划不包含以下哪个子计划？
+
+    凌云伙伴计划
+    展翅伙伴计划
+    飞腾伙伴计划
+    智数伙伴计划
+    答案：C
+
+多选题：
+    3. 关于ARM架构的特点，以下描述正确的是？
+
+
+    支持64位指令集，能很好的兼容从IOT、终端到云端的各类应用场景。
+    采用RISC指令集，指令长度固定，寻址方式灵活简单，执行效率高。
+    大量使用寄存器，大多数数据操作都在寄存器中完成，指令执行速度更快。
+    在移动端领域属于新进入者，其生态仍处于快速发展阶段。
+    答案：ABC
+
+    4. 以下属于华为鲲鹏处理器技术创新的是？
+
+    自研片间支持2路/4路互联
+    自研多种硬件协加速引擎
+    自研指令集架构
+    自研CPU内核
+    答案：ABD
+
+判断题：
+    5. 如果有服务器厂商想生产鲲鹏服 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/12/13/%E8%AF%A5%E8%A1%A5%E4%B8%80%E8%A1%A5Markdown%E8%AF%AD%E6%B3%95%E4%BA%86/" title="该补一补Markdown语法了">     <img class="post_bg" data-lazy-src="https://xwksir-1302576567.cos.ap-nanjing.myqcloud.com//imagesad668783847950a7b2a83f8d0f9fe19d.JPG" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="该补一补Markdown语法了"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/12/13/%E8%AF%A5%E8%A1%A5%E4%B8%80%E8%A1%A5Markdown%E8%AF%AD%E6%B3%95%E4%BA%86/" title="该补一补Markdown语法了">该补一补Markdown语法了</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-12-13T12:10:39.000Z" title="发表于 2020-12-13 20:10:39">2020-12-13</time></span></div><div class="content">包括但不限于：标题、字体、分割线、图片、超链接、列表、表格、代码、引用等
+
+
+为了使文章看起来更有序实用，暂且就按照我个人的使用频率来安排吧1. 标题# 的个数就是标题的级数，很简单，适用范围也广。不过注意#后面要加空格
+
+2. &lt;!-- more --&gt;省略文章内容用的。
+
+3. 列表1. 阿巴阿巴
+    - 阿巴阿巴
+    + 哈哈哈哈
+    * 嘿嘿嘿嘿
+2. 玛卡巴卡
+    - 阿巴阿巴
+    + 哈哈哈哈
+    * 嘿嘿嘿嘿
+
+实现效果：
+
+阿巴阿巴
+阿巴阿巴
+
+
+哈哈哈哈
+
+
+嘿嘿嘿嘿
+
+
+玛卡巴卡
+阿巴阿巴
+
+
+哈哈哈哈
+
+
+嘿嘿嘿嘿
+
+
+
+4. 字体**加粗内容**    这是加粗*倾斜内容*    这是倾斜***斜体又加粗***    这是斜体和加粗
+5. 图片和超链接![图片下面的文字](图片地址 &#39;&quot;图片标题（可有可无）&quot;)
+示例：
+
+
+[描述文字](链接)
+示例：
+
+哔哩哔哩
+6. 代码单行：``符号之间加上代码内容例如：cout&lt;&lt;&quot;多好的博客&quot;&lt;&lt;endl;多行： ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/12/13/VS2019-%E6%B0%B8%E4%B9%85-%E9%85%8D%E7%BD%AEopencv%E8%B8%A9%E8%BF%87%E7%9A%84%E5%9D%91/" title="关于VS2019“永久”配置opencv-3.4.12-vc14_vc15的问题">     <img class="post_bg" data-lazy-src="https://xwksir-1302576567.cos.ap-nanjing.myqcloud.com//imagesca7d8627f7fe82ac0a1e006836088362.JPG" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="关于VS2019“永久”配置opencv-3.4.12-vc14_vc15的问题"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/12/13/VS2019-%E6%B0%B8%E4%B9%85-%E9%85%8D%E7%BD%AEopencv%E8%B8%A9%E8%BF%87%E7%9A%84%E5%9D%91/" title="关于VS2019“永久”配置opencv-3.4.12-vc14_vc15的问题">关于VS2019“永久”配置opencv-3.4.12-vc14_vc15的问题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-12-13T11:38:20.000Z" title="发表于 2020-12-13 19:38:20">2020-12-13</time></span></div><div class="content">Visual Studio2019配置opencv（其实也包括所有相关文件的配置）
+
+
+想必能看到这篇文章的人应该也已经安装了VS和opencv，所以这两者的下载和安装就不多赘述了。
+1. 系统环境变量的配置首先win+r并输入sysdm.cpl配置下系统的环境变量，这里给个样例目录： D:\OpenCV\build\x64\vc15\bin具体的目录还是要根据自己情况来
+2.打开VS2019
+选择： Debug x64平台
+点击： 视图————属性管理器，点击项目名称左边的小三角形，即打开折叠页。
+打开 Debug|x64 的折叠页 并右击 Microsoft.Cpp.x64.user 的属性
+向 VC++ 的包含目录中添加三条： D:\OpenCV\build\include D:\OpenCV\build\include\opencv D:\OpenCV\build\include\opencv2
+向 VC++ 的库目录中加一条： D:\opencv\build\x64\vc15\lib
+链接器——输入——附加依赖项中加一个文件，这个文件在D:\opencv\build\x64\ ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/12/02/%E5%AE%89%E8%A3%85Oracle%E6%97%B6%E7%9A%84%E6%83%A8%E7%97%9B%E6%95%99%E8%AE%AD/" title="安装Oracle时的惨痛教训">     <img class="post_bg" data-lazy-src="https://xwksir-1302576567.cos.ap-nanjing.myqcloud.com//imagesIMG_0128.JPG" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="安装Oracle时的惨痛教训"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/12/02/%E5%AE%89%E8%A3%85Oracle%E6%97%B6%E7%9A%84%E6%83%A8%E7%97%9B%E6%95%99%E8%AE%AD/" title="安装Oracle时的惨痛教训">安装Oracle时的惨痛教训</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-12-02T14:30:42.000Z" title="发表于 2020-12-02 22:30:42">2020-12-02</time></span></div><div class="content">这是一篇看起来就很蛋疼的文章
+
+明天就要数据库考试了，现在是考试前一晚十点半，我怀着试一试的心态安装了Oracle，不得不说，MySQL真香！安装简单（甚至如果你有压缩包就根本不需要安装）。有空再写吧，装了半小时Oracle，百度了无数次，终于安装好了，我得去调试了。
+    基础不扎实，写文两行泪
+        ![图片alt](图片地址 &#39;&#39;图片title&#39;&#39;)
+        图片alt就是显示在图片下面的文字，相当于对图片内容的解释。
+        图片title是图片的标题，当鼠标移到图片上时显示的内容。title可加可不加
+    
+
+</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/11/22/C%E8%AF%AD%E8%A8%80%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A62/" title="C语言格式化字符">     <img class="post_bg" data-lazy-src="https://xwksir-1302576567.cos.ap-nanjing.myqcloud.com//images966c1bb0c39118128c04c5c783242d06.JPG" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C语言格式化字符"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/11/22/C%E8%AF%AD%E8%A8%80%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A62/" title="C语言格式化字符">C语言格式化字符</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-11-22T11:37:01.000Z" title="发表于 2020-11-22 19:37:01">2020-11-22</time></span></div><div class="content">C语言-格式输入输出中“%d,%o,%x,%e,%f”等的含义
+
+
+格式说明由“％”和格式字符组成，如％d％f等。它的作用是将输出的数据转换为指定的格式输出。格式说明总是由“％”字符开始的。不同类型的数据用不同的格式字符。
+
+格式字符有d,o,x,u,c,s,f,e,g等。 
+如
+
+％d整型输出，％ld长整型输出，
+
+％o以八进制数形式输出整数，
+
+％x以十六进制数形式输出整数，
+
+％u以十进制数输出unsigned型数据(无符号数)。
+
+％c用来输出一个字符，
+
+％s用来输出一个字符串，
+
+％f用来输出实数，以小数形式输出，（备注：浮点数是不能定义如的精度的，所以“%6.2f”这种写法是“错误的”！！！）
+
+％e以指数形式输出实数，
+
+％g根据大小自动选f格式或e格式，且不输出无意义的零。
+
+scanf(控制字符，地址列表) 
+格式字符的含义同printf函数，地址列表是由若干个地址组成的表列，可以是变量的地址，或字符串的首地址。如scanf(&quot;％d％c％s&quot;,&amp;a,&amp;b,str)；
+
+</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/10/29/%E5%B7%A5%E7%A8%8B%E4%B8%8E%E7%A4%BE%E4%BC%9A%E7%AC%AC%E4%B8%83%E3%80%81%E5%85%AB%E7%AB%A0%E7%AD%94%E6%A1%88/" title="工程与社会第七、八章答案">     <img class="post_bg" data-lazy-src="https://xwksir-1302576567.cos.ap-nanjing.myqcloud.com//imagesad668783847950a7b2a83f8d0f9fe19d.JPG" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="工程与社会第七、八章答案"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/10/29/%E5%B7%A5%E7%A8%8B%E4%B8%8E%E7%A4%BE%E4%BC%9A%E7%AC%AC%E4%B8%83%E3%80%81%E5%85%AB%E7%AB%A0%E7%AD%94%E6%A1%88/" title="工程与社会第七、八章答案">工程与社会第七、八章答案</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-10-29T09:11:30.000Z" title="发表于 2020-10-29 17:11:30">2020-10-29</time></span></div><div class="content">注：此条blog内容全部从公众号“答题小伙伴“获得，如果有人因为借鉴本文答题出错，博主概不负责
+
+第七章工程与管理1已完成1
+【单选题】工程专业教育最早在哪个领域展开?()
+A、土木工程
+B、交通工程
+C、环境工程
+D、化工工程
+我的答案：A
+2
+【单选题】2017年2月教育部提出了什么行动方案?()
+A、新理科
+B、新农科
+C、新学科
+D、新工科
+我的答案：D
+3
+【多选题】工程师应该具备的专业能力有哪些?()
+A、问题分析能力
+B、设计/开发解决方案能力
+C、研究能力
+D、使用现代工具能力
+我的答案：ABCD
+4
+【多选题】工程师应该具有哪些管理能力?()
+A、学习能力
+B、个人与管理能力
+C、沟通能力
+D、项目管理能力
+我的答案：BCD
+5
+【多选题】现代工程技术具有什么性?()
+A、滞后性
+B、先进性
+C、超前性
+D、落后性
+我的答案：BC
+
+工程与管理2已完成1
+【单选题】工程主要建筑设计是多少年?()
+A、60
+B、80
+C、100
+D、120
+我的答案：C
+2
+【单选题】现代工程难处理的问题不包括?()
+A、多主体
+B、多元
+C、多层次
+D、单一使用
+我的答案：D
+3
+【 ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/10/29/%E5%B7%A5%E7%A8%8B%E4%B8%8E%E7%A4%BE%E4%BC%9A%E7%AC%AC%E4%B8%89%E3%80%81%E5%9B%9B%E7%AB%A0%E7%AD%94%E6%A1%88/" title="工程与社会第三、四章答案">     <img class="post_bg" data-lazy-src="https://xwksir-1302576567.cos.ap-nanjing.myqcloud.com/images/a.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="工程与社会第三、四章答案"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/10/29/%E5%B7%A5%E7%A8%8B%E4%B8%8E%E7%A4%BE%E4%BC%9A%E7%AC%AC%E4%B8%89%E3%80%81%E5%9B%9B%E7%AB%A0%E7%AD%94%E6%A1%88/" title="工程与社会第三、四章答案">工程与社会第三、四章答案</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-10-29T09:11:30.000Z" title="发表于 2020-10-29 17:11:30">2020-10-29</time></span></div><div class="content">注：此条blog内容全部从公众号“答题小伙伴“获得，如果有人因为借鉴本文答题出错，博主概不负责
+
+第三章工程与经济1 课程概述1
+【单选题】    工程经济学的研究对象（）
+
+A、    工程项目
+
+B、    工程领域
+
+C、    经济活动
+
+D、    工程技术活动
+
+我的答案：A
+2  
+【单选题】    工程经济学研究的内容，从全局的范围来看，不包括以下哪方面的问题（）
+A、    技术引进方案的论证问题 
+
+B、    投资方面，项目选择问题
+
+C、    物资及项目开发引资的成本问题与利率问题    
+
+D、    外资的利用与偿还，引进前的可行性研究与引进后的经济效果评价问题
+
+$\color&#123;red&#125;&#123;红色字&#125;$ 我的答案：C
+3
+【单选题】    工程经济学最早可以追溯到哪一年？（）
+
+A、    1880年
+
+B、    1887年
+
+C、    1897年
+
+D、    1920年
+
+我的答案：B
+4
+【多选题】    以下属于改造世界范畴的含义有（）
+
+A、    科学
+
+B、    技术
+
+C、    工程
+
+D、   ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/07/16/hello-world/" title="Hello World">     <img class="post_bg" data-lazy-src="https://xwksir-1302576567.cos.ap-nanjing.myqcloud.com//imagesad668783847950a7b2a83f8d0f9fe19d.JPG" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hello World"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/07/16/hello-world/" title="Hello World">Hello World</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-07-15T16:00:00.000Z" title="发表于 2020-07-16 00:00:00">2020-07-16</time></span></div><div class="content">Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
+
+
+
+Quick StartCreate a new post1$ hexo new &quot;My New Post&quot;
+
+More info: Writing
+Run server1$ hexo server
+
+More info: Server
+Generate static files1$ hexo generate
+
+More info: Generating
+Deploy to remote sites1$ hexo deploy
+
+More info: Deployment
+</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/07/05/%E5%9F%9F%E5%90%8D%E7%9A%84%E8%B4%AD%E4%B9%B0%E5%8F%8A%E4%BD%BF%E7%94%A8/" title="域名的购买及使用">     <img class="post_bg" data-lazy-src="https://xwksir-1302576567.cos.ap-nanjing.myqcloud.com//images8aca7f08c37fe5908141a0f53bf8559a.PNG" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="域名的购买及使用"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/07/05/%E5%9F%9F%E5%90%8D%E7%9A%84%E8%B4%AD%E4%B9%B0%E5%8F%8A%E4%BD%BF%E7%94%A8/" title="域名的购买及使用">域名的购买及使用</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-07-05T07:32:13.000Z" title="发表于 2020-07-05 15:32:13">2020-07-05</time></span></div><div class="content">很多网站都提供域名的购买，这里提供了腾讯云（也就是这篇文章啦）和godaddy（b站视频）两个，取其一就好。本文仅供借鉴
+
+
+购买腾讯云域名（或其他）
+进入 腾讯云 然后登陆（或者注册）
+
+在腾讯云主页找到“域名注册”，找到自己喜欢的域名然后购买
+
+购买完成之后，点击右上角的“控制台”，然后进入“域名管理”
+
+查看域名的“服务状态”，可能需要实名认证，如果需要就按照腾讯云官方给的提示来就好，不需要的话请忽略这步
+
+点击“操作”下面的“解析”，默认情况下是有两个记录的，不用管它
+
+添加如下三条记录：
+
+
+
+主机记录
+纪录类型
+线路类型
+记录值
+
+
+
+@
+A
+默认
+192.30.252.153
+
+
+@
+A
+默认
+192.30.252.154
+
+
+www
+CNAME
+默认
+你的github昵称.github.io(也就是你原本的博客地址)
+
+
+ 解释一下，192.30.252.153和192.30.252.154是github官方给出的ip地址（别人说的），但是我没法访问，很奇怪。
+
+添加完之后，这里有两种操作方法
+
+直接在github的仓库里操作
+
+在本地cmd中操作第一种方法简单，但是如 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/06/06/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2-%E7%BB%B4%E6%8A%A4/" title="搭建博客全过程">     <img class="post_bg" data-lazy-src="https://xwksir-1302576567.cos.ap-nanjing.myqcloud.com//imagesca7d8627f7fe82ac0a1e006836088362.JPG" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="搭建博客全过程"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/06/06/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2-%E7%BB%B4%E6%8A%A4/" title="搭建博客全过程">搭建博客全过程</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-06-06T09:53:13.000Z" title="发表于 2020-06-06 17:53:13">2020-06-06</time></span></div><div class="content">适合小白的基础教程
+
+
+下载node.js：直接百度然后安装
+win+r打开 cmd 1)输入node -v检查node版本 2)输入npm -v检查npm版本
+输入npm install -g cnpm --registry=https://registry.npm.taobao.org然后等待安装完成
+输入cnpm install -g hexo-cli等待安装完成
+输入hexo -v你就会发现hexo被安装完成了，博客也就搭建完成了！
+
+提示默认目录：C:\User\你的电脑可以通过输入d:来进入D盘    输入cd \XXX来进入XXX文件夹（如果XXX文件夹存在的话）
+正式生成blog
+输入mkdir blog你就会在当前目录下生成一个blog的文件夹，你所有写的博客的内容都会存储在这个文件夹内
+输入cd blog/进入blog  (可以输入pwd可以查看路径是否正确)
+输入hexo init即利用hexo初始化一个博客
+输入hexo s正式启动我们的博客 此时它会给我们生成一个本地的localhost:4000窗口，我们可以在浏览器中输入localhost:4000访问
+
+ ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/2/#content-inner"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/#content-inner">2</a><span class="page-number current">3</span></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" data-lazy-src="https://xwksir-1302576567.cos.ap-nanjing.myqcloud.com/images/pig (2).jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">XXX</div><div class="author-info__description">这是一行励志的话</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">30</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">16</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xdefiner"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2532560155&amp;site=qq&amp;menu=yes" target="_blank" title="QQ"><i class="iconfont icon-qq"></i></a><a class="social-icon" href="https://github.com/xdefiner" target="_blank" title="Github"><i class="iconfont icon-github"></i></a><a class="social-icon" href="https://weibo.com/u/6337592888/home?wvr=5" target="_blank" title="WeiBo"><i class="iconfont icon-weibo"></i></a><a class="social-icon" href="https://space.bilibili.com/436407790" target="_blank" title="bilibili"><i class="iconfont icon-bilibili-fill"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">新年新气象，今年不挂科</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/02/21/Ubuntu20-04%E5%AE%89%E8%A3%85docker%E5%B9%B6%E8%BF%90%E8%A1%8CJenkins/" title="Ubuntu20.04安装docker并运行Jenkins"><img data-lazy-src="https://xwksir-1302576567.cos.ap-nanjing.myqcloud.com//images966c1bb0c39118128c04c5c783242d06.JPG" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Ubuntu20.04安装docker并运行Jenkins"/></a><div class="content"><a class="title" href="/2022/02/21/Ubuntu20-04%E5%AE%89%E8%A3%85docker%E5%B9%B6%E8%BF%90%E8%A1%8CJenkins/" title="Ubuntu20.04安装docker并运行Jenkins">Ubuntu20.04安装docker并运行Jenkins</a><time datetime="2022-02-21T03:16:42.000Z" title="发表于 2022-02-21 11:16:42">2022-02-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/10/30/%E7%AC%94%E6%9D%86%E5%AD%90%E6%83%A0%E5%AD%98/" title="笔杆子惠存"><img data-lazy-src="https://xwksir-1302576567.cos.ap-nanjing.myqcloud.com//imagesIMG_0128.JPG" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="笔杆子惠存"/></a><div class="content"><a class="title" href="/2021/10/30/%E7%AC%94%E6%9D%86%E5%AD%90%E6%83%A0%E5%AD%98/" title="笔杆子惠存">笔杆子惠存</a><time datetime="2021-10-30T12:19:59.819Z" title="发表于 2021-10-30 20:19:59">2021-10-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/10/30/Github%E5%81%9A%E5%85%8D%E8%B4%B9%E5%9B%BE%E5%BA%8A%EF%BC%88jsdelivr%E5%8A%A0%E9%80%9F%EF%BC%89/" title="Github做免费图床+jsdelivr加速+PicGo自动转链接配置"><img data-lazy-src="https://xwksir-1302576567.cos.ap-nanjing.myqcloud.com//imagesad668783847950a7b2a83f8d0f9fe19d.JPG" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Github做免费图床+jsdelivr加速+PicGo自动转链接配置"/></a><div class="content"><a class="title" href="/2021/10/30/Github%E5%81%9A%E5%85%8D%E8%B4%B9%E5%9B%BE%E5%BA%8A%EF%BC%88jsdelivr%E5%8A%A0%E9%80%9F%EF%BC%89/" title="Github做免费图床+jsdelivr加速+PicGo自动转链接配置">Github做免费图床+jsdelivr加速+PicGo自动转链接配置</a><time datetime="2021-10-30T11:57:22.000Z" title="发表于 2021-10-30 19:57:22">2021-10-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/09/03/Android-Studio-%E5%BC%80%E5%8F%91app%E6%97%B6%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/" title="Android Studio 开发app时遇到的一些问题"><img data-lazy-src="https://xwksir-1302576567.cos.ap-nanjing.myqcloud.com/images/a.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Android Studio 开发app时遇到的一些问题"/></a><div class="content"><a class="title" href="/2021/09/03/Android-Studio-%E5%BC%80%E5%8F%91app%E6%97%B6%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/" title="Android Studio 开发app时遇到的一些问题">Android Studio 开发app时遇到的一些问题</a><time datetime="2021-09-03T00:11:10.974Z" title="发表于 2021-09-03 08:11:10">2021-09-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/04/17/Butterfly%E9%97%AE%E9%A2%98%E9%9B%86/" title="Butterfly问题集"><img data-lazy-src="https://xwksir-1302576567.cos.ap-nanjing.myqcloud.com//images966c1bb0c39118128c04c5c783242d06.JPG" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Butterfly问题集"/></a><div class="content"><a class="title" href="/2021/04/17/Butterfly%E9%97%AE%E9%A2%98%E9%9B%86/" title="Butterfly问题集">Butterfly问题集</a><time datetime="2021-04-17T00:56:11.000Z" title="发表于 2021-04-17 08:56:11">2021-04-17</time></div></div></div></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/problems/" style="font-size: 1.25em; color: rgb(32, 176, 99)">problems</a><a href="/tags/%E5%8D%9A%E5%AE%A2%E4%BC%98%E5%8C%96/" style="font-size: 1.45em; color: rgb(97, 137, 17)">博客优化</a><a href="/tags/%E5%9F%BA%E7%A1%80/" style="font-size: 1.25em; color: rgb(88, 121, 24)">基础</a><a href="/tags/%E7%AD%94%E6%A1%88/" style="font-size: 1.35em; color: rgb(128, 119, 78)">答案</a><a href="/tags/Linux/" style="font-size: 1.25em; color: rgb(93, 161, 149)">Linux</a><a href="/tags/%E9%97%AE%E9%A2%98%E9%9B%86/" style="font-size: 1.25em; color: rgb(75, 134, 181)">问题集</a><a href="/tags/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/" style="font-size: 1.25em; color: rgb(110, 160, 24)">项目实战</a><a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 1.15em; color: rgb(152, 49, 64)">工具</a><a href="/tags/hexo%E5%8D%9A%E5%AE%A2%E4%BC%98%E5%8C%96/" style="font-size: 1.15em; color: rgb(105, 104, 5)">hexo博客优化</a><a href="/tags/%E5%A4%8D%E4%B9%A0%E8%AE%A1%E5%88%92/" style="font-size: 1.25em; color: rgb(190, 28, 56)">复习计划</a><a href="/tags/%E6%9C%89%E8%B6%A3%E7%9A%84%E4%BA%BA%E4%BA%8B%E7%89%A9/" style="font-size: 1.15em; color: rgb(157, 179, 106)">有趣的人事物</a><a href="/tags/homework/" style="font-size: 1.15em; color: rgb(8, 176, 52)">homework</a><a href="/tags/%E7%AC%94%E6%9D%86%E6%83%A0%E5%AD%98/" style="font-size: 1.15em; color: rgb(103, 110, 195)">笔杆惠存</a><a href="/tags/ubuntu/" style="font-size: 1.15em; color: rgb(98, 153, 99)">ubuntu</a><a href="/tags/docker/" style="font-size: 1.15em; color: rgb(113, 97, 147)">docker</a><a href="/tags/jenkins/" style="font-size: 1.15em; color: rgb(153, 49, 111)">jenkins</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span><a class="card-more-btn" href="/archives/" title="查看更多">
+    <i class="fas fa-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/02/"><span class="card-archive-list-date">二月 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/10/"><span class="card-archive-list-date">十月 2021</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/09/"><span class="card-archive-list-date">九月 2021</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/04/"><span class="card-archive-list-date">四月 2021</span><span class="card-archive-list-count">7</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/01/"><span class="card-archive-list-date">一月 2021</span><span class="card-archive-list-count">7</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/12/"><span class="card-archive-list-date">十二月 2020</span><span class="card-archive-list-count">6</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/11/"><span class="card-archive-list-date">十一月 2020</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/10/"><span class="card-archive-list-date">十月 2020</span><span class="card-archive-list-count">2</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">30</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2022-02-21T07:04:36.991Z"></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://xwksir-1302576567.cos.ap-nanjing.myqcloud.com/images/day01.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By XXX</div><div class="footer_custom_text"><p><a style="margin-inline:5px"target="_blank" href="https://hexo.io/"><img src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&logo=hexo" title="博客框架为 Hexo" alt="HEXO"></a><a style="margin-inline:5px"target="_blank" href="https://butterfly.js.org/"><img src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&logo=bitdefender" title="主题采用 Butterfly" alt="Butterfly"></a><a style="margin-inline:5px"target="_blank" href="https://www.jsdelivr.com/"><img src="https://img.shields.io/badge/CDN-jsDelivr-orange?style=flat&logo=jsDelivr" title="本站使用 Jsdelivr 为静态资源提供CDN加速" alt="Jsdelivr"></a><a style="margin-inline:5px"target="_blank" href="https://github.com/"><img src="https://img.shields.io/badge/Source-Github-d021d6?style=flat&logo=GitHub" title="本站项目由 GitHub 托管" alt="GitHub"></a><a style="margin-inline:5px"target="_blank"href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&logo=Claris" alt="img" title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可"></a></p><img src="https://xwksir-1302576567.cos.ap-nanjing.myqcloud.com//imagesbeian.png">
+<a href="https://beian.miit.gov.cn/"  style="color:#f72b07" target="_blank">苏ICP备2021017465号</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><div class="js-pjax"><script>function subtitleType () {
+  if (true) { 
+    var typed = new Typed("#subtitle", {
+      strings: "这个人也太懒了，一句话都没有留".split(","),
+      startDelay: 300,
+      typeSpeed: 150,
+      loop: true,
+      backSpeed: 50
+    })
+  } else {
+    document.getElementById("subtitle").innerHTML = '这个人也太懒了，一句话都没有留'
   }
-</script>
+}
 
-        </div>
-          
+if (true) {
+  if (typeof Typed === 'function') {
+    subtitleType()
+  } else {
+    getScript('https://cdn.jsdelivr.net/npm/typed.js/lib/typed.min.js').then(subtitleType)
+  }
+} else {
+  subtitleType()
+}</script></div><div class="aplayer no-destroy" data-id="000PeZCQ1i4XVs" data-server="tencent" data-type="artist" data-fixed="true" data-mini="true" data-listFolded="false" data-order="random" data-preload="none" data-autoplay="true" muted></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="true"></script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-show-text.min.js" data-mobile="true" data-text="富强,民主,文明,和谐,自由,平等,公正,法治,爱国,敬业,诚信,友善" data-fontsize="20px" data-random="false" async="async"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = [
+  'title',
+  '#config-diff',
+  '#body-wrap',
+  '#rightside-config-hide',
+  '#rightside-config-show',
+  '.js-pjax'
+]
+
+if (false) {
+  pjaxSelectors.unshift('meta[property="og:image"]', 'meta[property="og:title"]', 'meta[property="og:url"]')
+}
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // Analytics
+  if (false) {
+    MtaH5.pgv()
+  }
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+
+document.addEventListener('pjax:send', function () {
+  typeof preloader === 'object' && preloader.initLoading()
   
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
-  </div>
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
 
-  <aside class="sidebar">
-    <div class="sidebar-inner">
+  typeof typed === 'object' && typed.destroy()
 
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          文章目录
-        </li>
-        <li class="sidebar-nav-overview">
-          站点概览
-        </li>
-      </ul>
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
 
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-      </div>
-      <!--/noindex-->
+})
 
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="XXX"
-      src="https://xwksir-1302576567.cos.ap-nanjing.myqcloud.com/images/pig (2).jpg">
-  <p class="site-author-name" itemprop="name">XXX</p>
-  <div class="site-description" itemprop="description">这是一行励志的话</div>
-</div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/archives/">
-        
-          <span class="site-state-item-count">30</span>
-          <span class="site-state-item-name">日志</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-tags">
-            <a href="/tags/">
-          
-        <span class="site-state-item-count">16</span>
-        <span class="site-state-item-name">标签</span></a>
-      </div>
-  </nav>
-</div>
-  <div class="links-of-author motion-element">
-      <span class="links-of-author-item">
-        <a href="https://github.com/xdefiner" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;xdefiner" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="mailto:xwksir@qq.com" title="E-Mail → mailto:xwksir@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
-      </span>
-  </div>
-
-
-
-      </div>
-
-    </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
-
-
-      </div>
-    </main>
-
-    <footer class="footer">
-      <div class="footer-inner">
-        
-
-        
-
-<div class="copyright">
-  
-  &copy; 
-  <span itemprop="copyrightYear">2022</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">XXX</span>
-</div>
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
-  </div>
-
-        
-<div class="busuanzi-count">
-  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-user"></i>
-      </span>
-      <span class="site-uv" title="总访客量">
-        <span id="busuanzi_value_site_uv"></span>
-      </span>
-    </span>
-    <span class="post-meta-divider">|</span>
-    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-eye"></i>
-      </span>
-      <span class="site-pv" title="总访问量">
-        <span id="busuanzi_value_site_pv"></span>
-      </span>
-    </span>
-</div>
-
-
-
-
-
-
-
-
-      </div>
-    </footer>
-  </div>
-
-  
-  <script src="/lib/anime.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
-
-<script src="/js/utils.js"></script>
-
-<script src="/js/motion.js"></script>
-
-
-<script src="/js/schemes/pisces.js"></script>
-
-
-<script src="/js/next-boot.js"></script>
-
-
-
-
-  
-
-
-
-
-  
-<script src="//cdn.jsdelivr.net/npm/algoliasearch@4/dist/algoliasearch-lite.umd.js"></script>
-<script src="//cdn.jsdelivr.net/npm/instantsearch.js@4/dist/instantsearch.production.min.js"></script>
-<script src="/js/algolia-search.js"></script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-  
-
-
-<script>
-NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
-  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
-    var GUEST = ['nick', 'mail', 'link'];
-    var guest = 'nick,mail,link';
-    guest = guest.split(',').filter(item => {
-      return GUEST.includes(item);
-    });
-    new Valine({
-      el         : '#valine-comments',
-      verify     : false,
-      notify     : false,
-      appId      : 'S3s2MeXrLm9x95xWMIMfKaKr-gzGzoHsz',
-      appKey     : '9dhBtswUIquMic6NtbMVQMSp',
-      placeholder: "Show me your code",
-      avatar     : 'mm',
-      meta       : guest,
-      pageSize   : '10' || 10,
-      visitor    : false,
-      lang       : '' || 'zh-cn',
-      path       : location.pathname,
-      recordIP   : false,
-      serverURLs : ''
-    });
-  }, window.Valine);
-});
-</script>
-
-</body>
-</html>
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

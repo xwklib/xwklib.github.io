@@ -1,0 +1,363 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Ubuntu20.04安装docker并运行Jenkins | 多好OvO的博客</title><meta name="author"><meta name="copyright"><meta name="format-detection" content="telephone=no"><meta name="theme-color"><meta name="description" content="傻瓜式安装步骤">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ubuntu20.04安装docker并运行Jenkins">
+<meta property="og:url" content="http://116.63.184.120/2022/02/21/Ubuntu20-04%E5%AE%89%E8%A3%85docker%E5%B9%B6%E8%BF%90%E8%A1%8CJenkins/index.html">
+<meta property="og:site_name" content="多好OvO的博客">
+<meta property="og:description" content="傻瓜式安装步骤">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://xwksir-1302576567.cos.ap-nanjing.myqcloud.com//images966c1bb0c39118128c04c5c783242d06.JPG">
+<meta property="article:published_time" content="2022-02-21T03:16:42.000Z">
+<meta property="article:modified_time" content="2022-02-21T03:46:31.338Z">
+<meta property="article:author" content="多好OvO">
+<meta property="article:tag" content="ubuntu">
+<meta property="article:tag" content="docker">
+<meta property="article:tag" content="jenkins">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://xwksir-1302576567.cos.ap-nanjing.myqcloud.com//images966c1bb0c39118128c04c5c783242d06.JPG"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://116.63.184.120/2022/02/21/Ubuntu20-04%E5%AE%89%E8%A3%85docker%E5%B9%B6%E8%BF%90%E8%A1%8CJenkins/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: {"limitDay":180,"position":"top","messagePrev":"这篇文章已经","messageNext":"天没有更新了，相关内容【可能】已经过时，请留意。"},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-02-21 11:46:31'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    })(window)</script><link rel="stylesheet" href="/self/duotone.css"><link rel="stylesheet" href="/css/xwksir.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/css/icon.css" media="defer" onload="this.media='all'"><meta name="generator" content="Hexo 5.4.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" data-lazy-src="https://xwksir-1302576567.cos.ap-nanjing.myqcloud.com/images/pig (2).jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">30</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">16</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 清单</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://xwksir-1302576567.cos.ap-nanjing.myqcloud.com//images966c1bb0c39118128c04c5c783242d06.JPG')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">多好OvO的博客</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 清单</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Ubuntu20.04安装docker并运行Jenkins</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-02-21T03:16:42.000Z" title="发表于 2022-02-21 11:16:42">2022-02-21</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-02-21T03:46:31.338Z" title="更新于 2022-02-21 11:46:31">2022-02-21</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Ubuntu20.04安装docker并运行Jenkins"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/2022/02/21/Ubuntu20-04%E5%AE%89%E8%A3%85docker%E5%B9%B6%E8%BF%90%E8%A1%8CJenkins/#post-comment" itemprop="discussionUrl"><span class="valine-comment-count" data-xid="/2022/02/21/Ubuntu20-04%E5%AE%89%E8%A3%85docker%E5%B9%B6%E8%BF%90%E8%A1%8CJenkins/" itemprop="commentCount"></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>傻瓜式安装步骤</p>
+<span id="more"></span>
+
+<h1 id="准备条件"><a href="#准备条件" class="headerlink" title="准备条件"></a>准备条件</h1><ol>
+<li><p>maven</p>
+<p> <code>sudo apt install maven</code></p>
+<p> 安装完成后通过<code>mvn -v</code>可以查看版本及目录，且如果服务器中没有安装过jdk，会自动安装</p>
+<blockquote>
+<p>这种安装方式的缺点是无法指定版本，想要指定版本的可以参考：<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixx3/article/details/80331538?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522164541242916780366570986%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=164541242916780366570986&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-3-80331538.first_rank_v2_pc_rank_v29&utm_term=ubuntu%E5%AE%89%E8%A3%85maven&spm=1018.2226.3001.4187">Ubuntu18.04 安装Maven 3.5.3</a></p>
+</blockquote>
+</li>
+<li><p>jdk</p>
+</li>
+</ol>
+<h1 id="安装docker"><a href="#安装docker" class="headerlink" title="安装docker"></a>安装docker</h1><ol>
+<li><p>删除原有docker</p>
+<p> <code>sudo apt-get remove docker docker-engine docker.io containerd runc</code></p>
+</li>
+<li><p>安装相应的apt依赖</p>
+<p> <code>sudo apt-get update</code></p>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">sudo apt-get install \<br>    apt-transport-https \<br>    ca-certificates \<br>    curl \<br>    gnupg-agent \<br>    software-properties-common<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>添加docker的官方GPG密钥</p>
+<p> <code>curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -</code></p>
+</li>
+<li><p>根据你不同的系统去设置一个稳定的仓库（根据你的系统选一个哦，不要每个都搞）</p>
+<blockquote>
+<p>注：这一步我并没有执行，想要了解的可以参考：<a target="_blank" rel="noopener" href="https://blog.csdn.net/u010381752/article/details/114086343?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522164541093316780271570234%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=164541093316780271570234&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_positive~default-2-114086343.first_rank_v2_pc_rank_v29&utm_term=ubuntu%E5%AE%89%E8%A3%85docker&spm=1018.2226.3001.4187">Ubuntu 20.04 安装 docker 详解</a></p>
+</blockquote>
+</li>
+<li><p>再次更新apt</p>
+<p> <code>sudo apt-get update</code></p>
+</li>
+<li><p>安装docker</p>
+<p> <code>sudo apt-get install docker-ce docker-ce-cli containerd.io</code></p>
+</li>
+<li><p>运行hello-world</p>
+<p> <code>sudo docker run hello-world</code></p>
+</li>
+<li><p>添加当前用户到 docker 用户组</p>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs plaintext"># 列出自己的用户组，确认自己在不在 docker 组中<br>groups<br># 没有则新增docker组<br>sudo groupadd docker<br># 把当前用户加入到docker组中<br>sudo gpasswd -a $&#123;USER&#125; docker<br># 重启docker服务<br>sudo service docker restart<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>如果仍然无法直接使用docker命令，注销当前用户重新登陆即可，如果仍无法使用，建议重启。</p>
+</blockquote>
+<blockquote>
+<p>若在某些步骤安装失败，想重新开始，则可以通过：</p>
+<p><code>sudo docker rmi 镜像ID</code> 删除镜像</p>
+<p><code>sudo docker rm 容器ID</code> 删除容器</p>
+<p><code>sudo docker ps -a</code>查看当前所有的容器</p>
+<p><code>sudo docker ps</code>查看正在运行的容器</p>
+<p><code>sudo docker images</code>查看已经安装的镜像</p>
+</blockquote>
+</li>
+</ol>
+<h1 id="安装Jenkins"><a href="#安装Jenkins" class="headerlink" title="安装Jenkins"></a>安装Jenkins</h1><ol>
+<li><p>拉取<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=jenkins&spm=1001.2101.3001.7020">jenkins</a>的docker镜像，这里用的是lts的长期支持版本，你可以到jenkins官网自由选择其他版本</p>
+<p> <code>sudo docker pull jenkins/jenkins:lts</code></p>
+</li>
+<li><p>配置宿主机映射到容器的目录，之后jenkins的一些配置文件都将会存储到该目录下，这个目录可以自己定</p>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">sudo mkdir /home/jenkins_home<br>sudo chown -R 1000:1000 /home/jenkins_home<br></code></pre></td></tr></table></figure></li>
+<li><p>运行Jenkins</p>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">sudo docker run \<br>-d \<br>-p 8080:8080 \<br>-p 50000:50000 \<br>-v /home/jenkins_home:/var/jenkins_home \<br>-v /usr/share/maven:/usr/local/maven \<br>-v /etc/localtime:/etc/localtime \<br>--name myjenkins jenkins/jenkins:lts<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>参数详解：</p>
+<p><strong>-d 后台运行镜像</strong></p>
+<p><strong>-p 8080:8080</strong>  将镜像的8080端口映射到服务器的8080端口</p>
+<p><strong>-v 目录A:目录B</strong> 将服务器端的目录A挂载到docker中的目录B中去。如工作目录和maven目录。</p>
+<p><strong>-v /etc/localtime:/etc/localtime</strong> 让容器使用和服务器同样的时间设置。</p>
+<p><strong>–name myjenkins</strong> 意义：给容器起一个别名</p>
+</blockquote>
+</li>
+<li><p>容器启动后，就可以访问ip:8080看到jenkins首次运行的首页了，进入Jenkins后会要求输入管理员密码，可以通过如下方式获得</p>
+<p> <code>sudo cat /home/jenkins_home/secrets/initialAdminPassword</code></p>
+</li>
+</ol>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">多好OvO</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://116.63.184.120/2022/02/21/Ubuntu20-04%E5%AE%89%E8%A3%85docker%E5%B9%B6%E8%BF%90%E8%A1%8CJenkins/">http://116.63.184.120/2022/02/21/Ubuntu20-04%E5%AE%89%E8%A3%85docker%E5%B9%B6%E8%BF%90%E8%A1%8CJenkins/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://116.63.184.120" target="_blank">多好OvO的博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/ubuntu/">ubuntu</a><a class="post-meta__tags" href="/tags/docker/">docker</a><a class="post-meta__tags" href="/tags/jenkins/">jenkins</a></div><div class="post_share"><div class="social-share" data-image="https://xwksir-1302576567.cos.ap-nanjing.myqcloud.com//images966c1bb0c39118128c04c5c783242d06.JPG" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button button--animated"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="https://xwksir-1302576567.cos.ap-nanjing.myqcloud.com//imagesweixin.png" target="_blank"><img class="post-qr-code-img" data-lazy-src="https://xwksir-1302576567.cos.ap-nanjing.myqcloud.com//imagesweixin.png" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://xwksir-1302576567.cos.ap-nanjing.myqcloud.com//imagesalipay.png" target="_blank"><img class="post-qr-code-img" data-lazy-src="https://xwksir-1302576567.cos.ap-nanjing.myqcloud.com//imagesalipay.png" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2021/10/30/%E7%AC%94%E6%9D%86%E5%AD%90%E6%83%A0%E5%AD%98/"><img class="next-cover" data-lazy-src="https://xwksir-1302576567.cos.ap-nanjing.myqcloud.com//imagesIMG_0128.JPG" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">笔杆子惠存</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div><div id="comment-switch"><span class="first-comment">Valine</span><span class="switch-btn"></span><span class="second-comment">Waline</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div><div><div id="waline-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" data-lazy-src="https://xwksir-1302576567.cos.ap-nanjing.myqcloud.com/images/pig (2).jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">多好OvO</div><div class="author-info__description">这是一行励志的话</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">30</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">16</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xdefiner"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2532560155&amp;site=qq&amp;menu=yes" target="_blank" title="QQ"><i class="iconfont icon-qq"></i></a><a class="social-icon" href="https://github.com/xuanweikang" target="_blank" title="Github"><i class="iconfont icon-github"></i></a><a class="social-icon" href="https://weibo.com/u/6337592888/home?wvr=5" target="_blank" title="WeiBo"><i class="iconfont icon-weibo"></i></a><a class="social-icon" href="https://space.bilibili.com/436407790" target="_blank" title="bilibili"><i class="iconfont icon-bilibili-fill"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">新年新气象，今年不挂科</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%87%86%E5%A4%87%E6%9D%A1%E4%BB%B6"><span class="toc-number">1.</span> <span class="toc-text">准备条件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%89%E8%A3%85docker"><span class="toc-number">2.</span> <span class="toc-text">安装docker</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%89%E8%A3%85Jenkins"><span class="toc-number">3.</span> <span class="toc-text">安装Jenkins</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/02/21/Ubuntu20-04%E5%AE%89%E8%A3%85docker%E5%B9%B6%E8%BF%90%E8%A1%8CJenkins/" title="Ubuntu20.04安装docker并运行Jenkins"><img data-lazy-src="https://xwksir-1302576567.cos.ap-nanjing.myqcloud.com//images966c1bb0c39118128c04c5c783242d06.JPG" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Ubuntu20.04安装docker并运行Jenkins"/></a><div class="content"><a class="title" href="/2022/02/21/Ubuntu20-04%E5%AE%89%E8%A3%85docker%E5%B9%B6%E8%BF%90%E8%A1%8CJenkins/" title="Ubuntu20.04安装docker并运行Jenkins">Ubuntu20.04安装docker并运行Jenkins</a><time datetime="2022-02-21T03:16:42.000Z" title="发表于 2022-02-21 11:16:42">2022-02-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/10/30/%E7%AC%94%E6%9D%86%E5%AD%90%E6%83%A0%E5%AD%98/" title="笔杆子惠存"><img data-lazy-src="https://xwksir-1302576567.cos.ap-nanjing.myqcloud.com//imagesIMG_0128.JPG" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="笔杆子惠存"/></a><div class="content"><a class="title" href="/2021/10/30/%E7%AC%94%E6%9D%86%E5%AD%90%E6%83%A0%E5%AD%98/" title="笔杆子惠存">笔杆子惠存</a><time datetime="2021-10-30T12:19:59.819Z" title="发表于 2021-10-30 20:19:59">2021-10-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/10/30/Github%E5%81%9A%E5%85%8D%E8%B4%B9%E5%9B%BE%E5%BA%8A%EF%BC%88jsdelivr%E5%8A%A0%E9%80%9F%EF%BC%89/" title="Github做免费图床+jsdelivr加速+PicGo自动转链接配置"><img data-lazy-src="https://xwksir-1302576567.cos.ap-nanjing.myqcloud.com//imagesad668783847950a7b2a83f8d0f9fe19d.JPG" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Github做免费图床+jsdelivr加速+PicGo自动转链接配置"/></a><div class="content"><a class="title" href="/2021/10/30/Github%E5%81%9A%E5%85%8D%E8%B4%B9%E5%9B%BE%E5%BA%8A%EF%BC%88jsdelivr%E5%8A%A0%E9%80%9F%EF%BC%89/" title="Github做免费图床+jsdelivr加速+PicGo自动转链接配置">Github做免费图床+jsdelivr加速+PicGo自动转链接配置</a><time datetime="2021-10-30T11:57:22.000Z" title="发表于 2021-10-30 19:57:22">2021-10-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/09/03/Android-Studio-%E5%BC%80%E5%8F%91app%E6%97%B6%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/" title="Android Studio 开发app时遇到的一些问题"><img data-lazy-src="https://xwksir-1302576567.cos.ap-nanjing.myqcloud.com/images/a.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Android Studio 开发app时遇到的一些问题"/></a><div class="content"><a class="title" href="/2021/09/03/Android-Studio-%E5%BC%80%E5%8F%91app%E6%97%B6%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/" title="Android Studio 开发app时遇到的一些问题">Android Studio 开发app时遇到的一些问题</a><time datetime="2021-09-03T00:11:10.974Z" title="发表于 2021-09-03 08:11:10">2021-09-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/04/17/Butterfly%E9%97%AE%E9%A2%98%E9%9B%86/" title="Butterfly问题集"><img data-lazy-src="https://xwksir-1302576567.cos.ap-nanjing.myqcloud.com//images966c1bb0c39118128c04c5c783242d06.JPG" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Butterfly问题集"/></a><div class="content"><a class="title" href="/2021/04/17/Butterfly%E9%97%AE%E9%A2%98%E9%9B%86/" title="Butterfly问题集">Butterfly问题集</a><time datetime="2021-04-17T00:56:11.000Z" title="发表于 2021-04-17 08:56:11">2021-04-17</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://xwksir-1302576567.cos.ap-nanjing.myqcloud.com//images966c1bb0c39118128c04c5c783242d06.JPG')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By 多好OvO</div><div class="footer_custom_text"><p><a style="margin-inline:5px"target="_blank" href="https://hexo.io/"><img src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&logo=hexo" title="博客框架为 Hexo" alt="HEXO"></a><a style="margin-inline:5px"target="_blank" href="https://butterfly.js.org/"><img src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&logo=bitdefender" title="主题采用 Butterfly" alt="Butterfly"></a><a style="margin-inline:5px"target="_blank" href="https://www.jsdelivr.com/"><img src="https://img.shields.io/badge/CDN-jsDelivr-orange?style=flat&logo=jsDelivr" title="本站使用 Jsdelivr 为静态资源提供CDN加速" alt="Jsdelivr"></a><a style="margin-inline:5px"target="_blank" href="https://github.com/"><img src="https://img.shields.io/badge/Source-Github-d021d6?style=flat&logo=GitHub" title="本站项目由 GitHub 托管" alt="GitHub"></a><a style="margin-inline:5px"target="_blank"href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&logo=Claris" alt="img" title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可"></a></p><img src="https://xwksir-1302576567.cos.ap-nanjing.myqcloud.com//imagesbeian.png">
+<a href="https://beian.miit.gov.cn/"  style="color:#f72b07" target="_blank">苏ICP备2021017465号</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><div class="js-pjax"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.css"><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', '', 'katex-wrap')
+  })
+})()</script><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: 'S3s2MeXrLm9x95xWMIMfKaKr-gzGzoHsz',
+      appKey: '9dhBtswUIquMic6NtbMVQMSp',
+      placeholder: '来都来了，不说两句？',
+      avatar: 'monsterid',
+      meta: 'nick,mail,link'.split(','),
+      pageSize: '10',
+      lang: 'zh-CN',
+      recordIP: false,
+      serverURLs: '',
+      emojiCDN: '',
+      emojiMaps: "",
+      enableQQ: false,
+      path: window.location.pathname,
+      requiredFields: ["nick,mail"],
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script><script>function loadWaline () {
+  function initWaline () {
+    const waline = new Waline(Object.assign({
+      el: '#waline-wrap',
+      serverURL: '',
+      avatar: 'monsterid',
+      path: location.pathname,
+      emojiCDN: '',
+      emojiMaps: "",
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Waline === 'function') initWaline() 
+  else getScript('https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js').then(initWaline)
+}
+
+if ('Valine' === 'Waline' || !false) {
+  if (false) btf.loadComment(document.getElementById('waline-wrap'),loadWaline)
+  else setTimeout(loadWaline, 0)
+} else {
+  function loadOtherComment () {
+    loadWaline()
+  }
+}</script></div><div class="aplayer no-destroy" data-id="000PeZCQ1i4XVs" data-server="tencent" data-type="artist" data-fixed="true" data-mini="true" data-listFolded="false" data-order="random" data-preload="none" data-autoplay="true" muted></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="true"></script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-show-text.min.js" data-mobile="true" data-text="富强,民主,文明,和谐,自由,平等,公正,法治,爱国,敬业,诚信,友善" data-fontsize="20px" data-random="false" async="async"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = [
+  'title',
+  '#config-diff',
+  '#body-wrap',
+  '#rightside-config-hide',
+  '#rightside-config-show',
+  '.js-pjax'
+]
+
+if (false) {
+  pjaxSelectors.unshift('meta[property="og:image"]', 'meta[property="og:title"]', 'meta[property="og:url"]')
+}
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // Analytics
+  if (false) {
+    MtaH5.pgv()
+  }
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+
+document.addEventListener('pjax:send', function () {
+  typeof preloader === 'object' && preloader.initLoading()
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

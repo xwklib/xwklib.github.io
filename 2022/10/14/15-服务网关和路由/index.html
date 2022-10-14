@@ -1,0 +1,431 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>What a nice Blog | What a nice Blog</title><meta name="author"><meta name="copyright"><meta name="format-detection" content="telephone=no"><meta name="theme-color"><meta name="description" content="服务网关和路由服务网关分布式系统的横切关注点 cross-cutting concern    安全  日志记录  用户跟踪  服务网关（service gateway）   服务网关 服务网关位于服务客户端和相应的服务实例之间  所有服务调用（内部和外部）都应流经服务网关  服务网关提供的能力  静态路由  动态路由  验证和授权  度量数据收集和日志记录     服务网关的实现Zuul Zuu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="What a nice Blog">
+<meta property="og:url" content="https://wkxuan.cn/2022/10/14/15-%E6%9C%8D%E5%8A%A1%E7%BD%91%E5%85%B3%E5%92%8C%E8%B7%AF%E7%94%B1/index.html">
+<meta property="og:site_name" content="What a nice Blog">
+<meta property="og:description" content="服务网关和路由服务网关分布式系统的横切关注点 cross-cutting concern    安全  日志记录  用户跟踪  服务网关（service gateway）   服务网关 服务网关位于服务客户端和相应的服务实例之间  所有服务调用（内部和外部）都应流经服务网关  服务网关提供的能力  静态路由  动态路由  验证和授权  度量数据收集和日志记录     服务网关的实现Zuul Zuu">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://xwksir-1302576567.cos.ap-nanjing.myqcloud.com//imagesIMG_0128.JPG">
+<meta property="article:published_time" content="2022-10-14T15:01:14.716Z">
+<meta property="article:modified_time" content="2022-04-19T16:11:02.179Z">
+<meta property="article:author" content="XWK">
+<meta property="article:tag" content="关键字">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://xwksir-1302576567.cos.ap-nanjing.myqcloud.com//imagesIMG_0128.JPG"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://wkxuan.cn/2022/10/14/15-%E6%9C%8D%E5%8A%A1%E7%BD%91%E5%85%B3%E5%92%8C%E8%B7%AF%E7%94%B1/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: {"limitDay":180,"position":"top","messagePrev":"这篇文章已经","messageNext":"天没有更新了，相关内容【可能】已经过时，请留意。"},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-04-20 00:11:02'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    })(window)</script><link rel="stylesheet" href="/self/duotone.css"><link rel="stylesheet" href="/css/xwksir.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/css/icon.css" media="defer" onload="this.media='all'"><meta name="generator" content="Hexo 5.4.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" data-lazy-src="https://xwksir-1302576567.cos.ap-nanjing.myqcloud.com/images/pig (2).jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">47</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">16</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 清单</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://xwksir-1302576567.cos.ap-nanjing.myqcloud.com//imagesIMG_0128.JPG')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">What a nice Blog</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 清单</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">无题</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-10-14T15:01:14.716Z" title="发表于 2022-10-14 23:01:14">2022-10-14</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-04-19T16:11:02.179Z" title="更新于 2022-04-20 00:11:02">2022-04-20</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/2022/10/14/15-%E6%9C%8D%E5%8A%A1%E7%BD%91%E5%85%B3%E5%92%8C%E8%B7%AF%E7%94%B1/#post-comment" itemprop="discussionUrl"><span class="valine-comment-count" data-xid="/2022/10/14/15-%E6%9C%8D%E5%8A%A1%E7%BD%91%E5%85%B3%E5%92%8C%E8%B7%AF%E7%94%B1/" itemprop="commentCount"></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="服务网关和路由"><a href="#服务网关和路由" class="headerlink" title="服务网关和路由"></a>服务网关和路由</h1><h2 id="服务网关"><a href="#服务网关" class="headerlink" title="服务网关"></a>服务网关</h2><h3 id="分布式系统的横切关注点"><a href="#分布式系统的横切关注点" class="headerlink" title="分布式系统的横切关注点"></a>分布式系统的横切关注点</h3><ul>
+<li><p>cross-cutting concern</p>
+  <img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/xwklib/image-host/PicGo/image-20220418163309843.png" alt="image-20220418163309843" style="zoom:50%;" /></li>
+<li><p>安全</p>
+</li>
+<li><p>日志记录</p>
+</li>
+<li><p>用户跟踪</p>
+</li>
+<li><p>服务网关（service gateway）</p>
+</li>
+</ul>
+<h3 id="服务网关-1"><a href="#服务网关-1" class="headerlink" title="服务网关"></a>服务网关</h3><ul>
+<li><p>服务网关位于服务客户端和相应的服务实例之间</p>
+</li>
+<li><p>所有服务调用（内部和外部）都应流经服务网关</p>
+</li>
+<li><p>服务网关提供的能力</p>
+<ul>
+<li><p>静态路由</p>
+</li>
+<li><p>动态路由</p>
+</li>
+<li><p>验证和授权</p>
+</li>
+<li><p>度量数据收集和日志记录</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="服务网关的实现Zuul"><a href="#服务网关的实现Zuul" class="headerlink" title="服务网关的实现Zuul"></a>服务网关的实现Zuul</h3><blockquote>
+<p>Zuul is a gateway service that provides dynamic routing, monitoring, resiliency, security, and more.</p>
+</blockquote>
+<ul>
+<li>将应用程序中的所有服务的路由映射到一个URL</li>
+<li>过滤器</li>
+</ul>
+<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/xwklib/image-host/PicGo/image-20220418163912021.png" alt="image-20220418163912021"></p>
+<h3 id="分布式系统关系图"><a href="#分布式系统关系图" class="headerlink" title="分布式系统关系图"></a>分布式系统关系图</h3><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/xwklib/image-host/PicGo/image-20220418164423818.png" alt="image-20220418164423818" style="zoom:80%;" />
+
+<p>网关作用：一个中转站（外部访问、内部调用都要通过网关），所以普通用户调用时用的是网关的端口加上zuul.prefix</p>
+<h4 id="通过服务发现自动映射路由"><a href="#通过服务发现自动映射路由" class="headerlink" title="通过服务发现自动映射路由"></a>通过服务发现自动映射路由</h4><ul>
+<li><p>服务ID</p>
+</li>
+<li><p>需要访问Eureka，有服务才会创建路由</p>
+</li>
+<li><p>默认的映射路由为：（通过GET<code>http://localhost:5555/routes</code>获取）</p>
+<p>  <code>/服务ID/**: 服务ID</code></p>
+</li>
+</ul>
+<h4 id="使用服务发现手动映射路由"><a href="#使用服务发现手动映射路由" class="headerlink" title="使用服务发现手动映射路由"></a>使用服务发现手动映射路由</h4><ul>
+<li><p>手动映射：confsvr中，修改<code>zuulservice.yml</code>配置：</p>
+  <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">zuul.prefix:</span>  <span class="hljs-string">/api</span><br><span class="hljs-attr">zuul.routes.organizationservice:</span> <span class="hljs-string">/organization/**</span><br><span class="hljs-attr">zuul.routes.licensingservice:</span> <span class="hljs-string">/licensing/**</span><br><span class="hljs-attr">zuul.routes.authenticationservice:</span> <span class="hljs-string">/auth/**</span><br></code></pre></td></tr></table></figure>
+
+<p>  此时的映射路由会添加（注意原先的还在，而且加上了前缀<code>api</code>）</p>
+<p>  <code>/api/服务ID去掉service后缀/**:服务ID</code></p>
+<p>  也就是对URL完成了缩短</p>
+</li>
+</ul>
+<h4 id="使用静态URL手动映射路由"><a href="#使用静态URL手动映射路由" class="headerlink" title="使用静态URL手动映射路由"></a>使用静态URL手动映射路由</h4><p>适用场景：非Java开发的项目（没有注册到服务发现中）</p>
+<ul>
+<li><p>静态URL是指向未通过Eureka服务发现引擎注册的服务的URL</p>
+</li>
+<li><p>禁用Ribbon与Eureka集成，手动指定负载均衡的服务实例</p>
+</li>
+</ul>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">zuul.routes.licensestatic.path:</span> <span class="hljs-string">/注意加上zuul.prefix（如果有的话）/otherService/**</span><br><span class="hljs-attr">zuul.routes.licensestatic.url:</span>  <span class="hljs-string">http://otherService:8081</span><br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<ul>
+<li><strong>负载均衡</strong></li>
+</ul>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-comment"># 定义一个 服务ID</span><br><span class="hljs-attr">zuul.routes.licensestatic.serviceId:</span> <span class="hljs-string">licensestatic</span><br><span class="hljs-comment"># 多个实例（可能是非Java开发的）</span><br><span class="hljs-attr">zuul.routes.licensestatic.ribbon.listOfServers:</span> <span class="hljs-string">http://licenseservice-static1:8081,</span> <span class="hljs-string">http://licenseservice-static2:8082</span><br><span class="hljs-comment"># 此时就不需要ribbon了，所以要加上false</span><br><span class="hljs-attr">ribbon.eureka.enabled:</span> <span class="hljs-literal">false</span><br></code></pre></td></tr></table></figure>
+</blockquote>
+<h4 id="动态重新加载路由配置"><a href="#动态重新加载路由配置" class="headerlink" title="动态重新加载路由配置"></a>动态重新加载路由配置</h4><p>如果属性文件放在git仓库中，那么可以到仓库中来手动修改配置，且让Zuul能够重新加载这些配置，就可以发送POST请求到</p>
+<p><code>POST:http://localhost:5555/refresh</code>来让微服务主动刷新配置</p>
+<h4 id="设置超时"><a href="#设置超时" class="headerlink" title="设置超时"></a>设置超时</h4><p>原因：</p>
+<ul>
+<li>Hystrix的超时时间为1秒</li>
+<li>Ribbon的超时时间为5秒</li>
+<li>Ribbon的懒加载导致第一次调用慢</li>
+</ul>
+<blockquote>
+<p>剩下的这些配置没讲</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java">zuul.sensitiveHeaders: Cookie,Set-Cookie<br>zuul.debug.request: <span class="hljs-keyword">true</span><br>hystrix.command.<span class="hljs-keyword">default</span>.execution.isolation.thread.timeoutInMilliseconds: <span class="hljs-number">2500</span><br>#hystrix.command.licensingservice.execution.isolation.thread.timeoutInMilliseconds: <span class="hljs-number">2</span><br>#licensingservice.ribbon.ReadTimeout: <span class="hljs-number">2</span><br>signing.key: <span class="hljs-string">&quot;345345fsdfsf5345&quot;</span><br></code></pre></td></tr></table></figure>
+</blockquote>
+<h3 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h3><ul>
+<li><p>使用Zuul和Zuul过滤器允许开发人员为通过Zuul路由的所有服务实现横切关注点</p>
+</li>
+<li><p>ZuulFilter</p>
+<ul>
+<li>前置过滤器，在Zuul将实际请求发送到目的地之前被调用</li>
+<li>后置过滤器，在目标服务被调用并将响应发送回客户端后被调用</li>
+<li>路由过滤器，用于在调用目标服务之前拦截调用</li>
+</ul>
+</li>
+</ul>
+<h4 id="前置过滤器"><a href="#前置过滤器" class="headerlink" title="前置过滤器"></a>前置过滤器</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Component</span><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TrackingFilter</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">ZuulFilter</span></span>&#123;<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span>      FILTER_ORDER =  <span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">boolean</span>  SHOULD_FILTER=<span class="hljs-keyword">true</span>;<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> Logger logger = LoggerFactory.getLogger(TrackingFilter.class);<br><br>    <span class="hljs-meta">@Autowired</span><br>    FilterUtils filterUtils;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">filterType</span><span class="hljs-params">()</span> </span>&#123;<br>        <span class="hljs-keyword">return</span> FilterUtils.PRE_FILTER_TYPE;<br>    &#125;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">filterOrder</span><span class="hljs-params">()</span> </span>&#123;<br>        <span class="hljs-keyword">return</span> FILTER_ORDER;<br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">shouldFilter</span><span class="hljs-params">()</span> </span>&#123;<br>        <span class="hljs-keyword">return</span> SHOULD_FILTER;<br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">isCorrelationIdPresent</span><span class="hljs-params">()</span></span>&#123;<br>      <span class="hljs-keyword">if</span> (filterUtils.getCorrelationId() !=<span class="hljs-keyword">null</span>)&#123;<br>          <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;<br>      &#125;<br><br>      <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;<br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-keyword">private</span> String <span class="hljs-title">generateCorrelationId</span><span class="hljs-params">()</span></span>&#123;<br>        <span class="hljs-keyword">return</span> java.util.UUID.randomUUID().toString();<br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> Object <span class="hljs-title">run</span><span class="hljs-params">()</span> </span>&#123;<br>		<span class="hljs-comment">// 获取关联ID（手动定义的）</span><br>        <span class="hljs-keyword">if</span> (isCorrelationIdPresent()) &#123;<br>           logger.debug(<span class="hljs-string">&quot;tmx-correlation-id found in tracking filter: &#123;&#125;. &quot;</span>, filterUtils.getCorrelationId());<br>        &#125;<br>        <span class="hljs-keyword">else</span>&#123; <span class="hljs-comment">// 没有的话就设置一个（随机生成）</span><br>            filterUtils.setCorrelationId(generateCorrelationId());<br>            logger.debug(<span class="hljs-string">&quot;tmx-correlation-id generated in tracking filter: &#123;&#125;.&quot;</span>, filterUtils.getCorrelationId());<br>        &#125;<br>		<span class="hljs-comment">// 获取请求上下文</span><br>        RequestContext ctx = RequestContext.getCurrentContext();<br>        logger.debug(<span class="hljs-string">&quot;Processing incoming request for &#123;&#125;.&quot;</span>,  ctx.getRequest().getRequestURI());<br>        logger.debug(<span class="hljs-string">&quot;====incoming=========ServiceId==&#123;&#125;&quot;</span>,filterUtils.getServiceId());<br>        <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h4 id="路由过滤器"><a href="#路由过滤器" class="headerlink" title="路由过滤器"></a>路由过滤器</h4><h5 id="动态路由"><a href="#动态路由" class="headerlink" title="动态路由"></a>动态路由</h5><blockquote>
+<p>没细讲，跳过</p>
+</blockquote>
+<h4 id="后置过滤器"><a href="#后置过滤器" class="headerlink" title="后置过滤器"></a>后置过滤器</h4><p>通过<code>filterType</code>来区分前置与后置</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Component</span><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ResponseFilter</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">ZuulFilter</span></span>&#123;<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span>  FILTER_ORDER=<span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">boolean</span>  SHOULD_FILTER=<span class="hljs-keyword">true</span>;<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> Logger logger = LoggerFactory.getLogger(ResponseFilter.class);<br>    <br>    <span class="hljs-meta">@Autowired</span><br>    FilterUtils filterUtils;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">filterType</span><span class="hljs-params">()</span> </span>&#123;<br>        <span class="hljs-keyword">return</span> FilterUtils.POST_FILTER_TYPE;<br>    &#125;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">filterOrder</span><span class="hljs-params">()</span> </span>&#123;<br>        <span class="hljs-keyword">return</span> FILTER_ORDER;<br>    &#125;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">shouldFilter</span><span class="hljs-params">()</span> </span>&#123;<br>        <span class="hljs-keyword">return</span> SHOULD_FILTER;<br>    &#125;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> Object <span class="hljs-title">run</span><span class="hljs-params">()</span> </span>&#123;<br>        RequestContext ctx = RequestContext.getCurrentContext();<br><br>        logger.debug(<span class="hljs-string">&quot;Adding the correlation id to the outbound headers. &#123;&#125;&quot;</span>, filterUtils.getCorrelationId());<br>        ctx.getResponse().addHeader(FilterUtils.CORRELATION_ID, filterUtils.getCorrelationId());<br><br>        logger.debug(<span class="hljs-string">&quot;Completing outgoing request for &#123;&#125;.&quot;</span>, ctx.getRequest().getRequestURI());<br>        logger.debug(<span class="hljs-string">&quot;====outgoing=========ServiceId==&#123;&#125;&quot;</span>,filterUtils.getServiceId());<br>        <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h4 id="过滤器总结"><a href="#过滤器总结" class="headerlink" title="过滤器总结"></a>过滤器总结</h4><p>主要功能：</p>
+<ol>
+<li>当用户请求头中没有关联ID时，zuulservice会在前置过滤器随机生成一个（设为<code>X</code>），并传给licensing</li>
+<li>licensing的filter会获取到<code>X</code>并保存到线程中。<ul>
+<li>若licensing需要向organization调用服务（我们只考虑这种情况，否则也不需要关联ID了），则在发送请求之前会由Hystrix获取线程中的<code>X</code>（见[2.2 licensing-service](### licensing-service)的第二点），然后再发送请求给zuulservice让他帮忙联系organization。（如果organization长时间未响应则会触发<code>@HystrixCommand</code>中具体参数的响应）</li>
+</ul>
+</li>
+<li>zuulservice会在前置过滤器再次判断，但是这时候有关联ID了，就是这个<code>X</code>，然后带着这个<code>X</code>向organization发送请求</li>
+<li>organization接收到请求，像licensing一样保存这个ID<code>X</code>，返回数据，且带上<code>X</code>给zuulservice</li>
+<li>zuulservice此时会在后置过滤器中处理这个<code>X</code>，并传给licensing</li>
+<li>licensing处理完用户请求，并再次带着<code>X</code>返回结果给zuulservice</li>
+<li>licensing的处理结果会带着<code>X</code>再次进入zuulservice的后置过滤器，zuulservice会在最终返回给用户的response带上这个<code>X</code></li>
+<li>若用户请求头有关联ID也同理</li>
+</ol>
+<h2 id="具体实现"><a href="#具体实现" class="headerlink" title="具体实现"></a>具体实现</h2><h3 id="zuulsvr"><a href="#zuulsvr" class="headerlink" title="zuulsvr"></a>zuulsvr</h3><ol>
+<li><p>添加依赖</p>
+<blockquote>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs xml"> <span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br>     <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.cloud<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>     <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-cloud-starter-zuul<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br></code></pre></td></tr></table></figure></blockquote>
+</li>
+<li><p>启动类加注解</p>
+<p> <code>@EnableZuulProxy</code></p>
+</li>
+<li><p>编写相关配置</p>
+<p> <code>application.yml</code></p>
+ <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">server:</span><br>  <span class="hljs-attr">port:</span> <span class="hljs-number">5555</span><br>  <span class="hljs-comment">#Setting logging levels</span><br><span class="hljs-attr">logging:</span><br>    <span class="hljs-attr">level:</span><br>      <span class="hljs-attr">com.netflix:</span> <span class="hljs-string">WARN</span><br>      <span class="hljs-attr">org.springframework.web:</span> <span class="hljs-string">WARN</span><br>      <span class="hljs-attr">com.thoughtmechanix:</span> <span class="hljs-string">DEBUG</span><br><br><span class="hljs-attr">eureka:</span><br>  <span class="hljs-attr">instance:</span><br>    <span class="hljs-attr">preferIpAddress:</span> <span class="hljs-literal">true</span><br>  <span class="hljs-attr">client:</span><br>    <span class="hljs-attr">registerWithEureka:</span> <span class="hljs-literal">true</span> <span class="hljs-comment"># 服务网关也要注册到服务发现(erueka)中去</span><br>    <span class="hljs-attr">fetchRegistry:</span> <span class="hljs-literal">true</span><br>    <span class="hljs-attr">serviceUrl:</span><br>        <span class="hljs-attr">defaultZone:</span> <span class="hljs-string">http://localhost:8761/eureka/</span><br></code></pre></td></tr></table></figure>
+
+<p> <code>bootstrap.yml</code></p>
+ <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">spring:</span><br>  <span class="hljs-attr">application:</span><br>    <span class="hljs-attr">name:</span> <span class="hljs-string">zuulservice</span><br>  <span class="hljs-attr">profiles:</span><br>    <span class="hljs-attr">active:</span><br>      <span class="hljs-string">default</span><br>  <span class="hljs-attr">cloud:</span><br>    <span class="hljs-attr">config:</span><br>      <span class="hljs-attr">enabled:</span> <span class="hljs-literal">true</span><br></code></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="licensing-service"><a href="#licensing-service" class="headerlink" title="licensing-service"></a>licensing-service</h3><ol>
+<li><p>在调用organization-service的地方做出一些修改</p>
+<p> 原先的调用代码：</p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> Organization <span class="hljs-title">getOrganization</span><span class="hljs-params">(String organizationId)</span></span>&#123;<br>    ResponseEntity&lt;Organization&gt; restExchange =<br>        restTemplate.exchange(<br>        <span class="hljs-string">&quot;http://organizationservice/v1/organizations/&#123;organizationId&#125;&quot;</span>,<br>        HttpMethod.GET,<br>        <span class="hljs-keyword">null</span>, Organization.class, organizationId);<br><br>    <span class="hljs-keyword">return</span> restExchange.getBody();<br>&#125;<br></code></pre></td></tr></table></figure>
+<p> 修改成：</p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> Organization <span class="hljs-title">getOrganization</span><span class="hljs-params">(String organizationId)</span></span>&#123;<br>    ResponseEntity&lt;Organization&gt; restExchange =<br>        restTemplate.exchange(<br>        <span class="hljs-comment">// 这个URL要根据具体情况来改变</span><br>        <span class="hljs-comment">// 如是否有api（即zuul.prefix）</span><br>        <span class="hljs-comment">// 如organization是否有后缀（即手动配置路由））</span><br>        <span class="hljs-comment">// 但是/v1及以后的是固定的（即真正的organization服务地址）</span><br>        <span class="hljs-string">&quot;http://zuulservice/api/organization/v1/organizations/&#123;organizationId&#125;&quot;</span>,<br>        HttpMethod.GET,<br>        <span class="hljs-keyword">null</span>, Organization.class, organizationId);<br>    <span class="hljs-keyword">return</span> restExchange.getBody();<br>&#125;<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>为了让Hystrix能够获取到线程中的关联ID，需要取消上节课中【支持Ribbon的RestTemplate的拦截器】（即<code>UserContextInterceptor</code>）前取消<code>@Component</code>注解；然后在启动类中主动添加<code>@Bean</code>与<code>@LoadBalanced</code>。</p>
+<p> 看不懂也没关系，代码如下：</p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@SpringBootApplication</span><br><span class="hljs-meta">@EnableEurekaClient</span><br><span class="hljs-meta">@EnableCircuitBreaker</span><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Application</span> </span>&#123;<br><br>    <span class="hljs-meta">@LoadBalanced</span><br>    <span class="hljs-meta">@Bean</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> RestTemplate <span class="hljs-title">getRestTemplate</span><span class="hljs-params">()</span></span>&#123;<br>        RestTemplate template = <span class="hljs-keyword">new</span> RestTemplate();<br>        List interceptors = template.getInterceptors();<br>        <span class="hljs-keyword">if</span> (interceptors==<span class="hljs-keyword">null</span>)&#123;<br>            template.setInterceptors(Collections.singletonList(<span class="hljs-keyword">new</span> UserContextInterceptor()));<br>        &#125;<br>        <span class="hljs-keyword">else</span>&#123;<br>            interceptors.add(<span class="hljs-keyword">new</span> UserContextInterceptor());<br>            template.setInterceptors(interceptors);<br>        &#125;<br><br>        <span class="hljs-keyword">return</span> template;<br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>&#123;<br>        SpringApplication.run(Application.class, args);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+</li>
+</ol>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">XWK</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://wkxuan.cn/2022/10/14/15-%E6%9C%8D%E5%8A%A1%E7%BD%91%E5%85%B3%E5%92%8C%E8%B7%AF%E7%94%B1/">https://wkxuan.cn/2022/10/14/15-%E6%9C%8D%E5%8A%A1%E7%BD%91%E5%85%B3%E5%92%8C%E8%B7%AF%E7%94%B1/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://wkxuan.cn" target="_blank">What a nice Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://xwksir-1302576567.cos.ap-nanjing.myqcloud.com//imagesIMG_0128.JPG" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button button--animated"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="https://xwksir-1302576567.cos.ap-nanjing.myqcloud.com//imagesweixin.png" target="_blank"><img class="post-qr-code-img" data-lazy-src="https://xwksir-1302576567.cos.ap-nanjing.myqcloud.com//imagesweixin.png" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://xwksir-1302576567.cos.ap-nanjing.myqcloud.com//imagesalipay.png" target="_blank"><img class="post-qr-code-img" data-lazy-src="https://xwksir-1302576567.cos.ap-nanjing.myqcloud.com//imagesalipay.png" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2022/10/14/14-%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%BC%B9%E6%80%A7%E3%80%81%E6%96%AD%E8%B7%AF%E5%99%A8%E6%A8%A1%E5%BC%8F/"><img class="next-cover" data-lazy-src="https://xwksir-1302576567.cos.ap-nanjing.myqcloud.com//imagesad668783847950a7b2a83f8d0f9fe19d.JPG" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info"></div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div><div id="comment-switch"><span class="first-comment">Valine</span><span class="switch-btn"></span><span class="second-comment">Waline</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div><div><div id="waline-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" data-lazy-src="https://xwksir-1302576567.cos.ap-nanjing.myqcloud.com/images/pig (2).jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">XWK</div><div class="author-info__description">哈哈哈哈哈哈哈哈</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">47</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">16</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xdefiner"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2532560155&amp;site=qq&amp;menu=yes" target="_blank" title="QQ"><i class="iconfont icon-qq"></i></a><a class="social-icon" href="https://github.com/xdefiner" target="_blank" title="Github"><i class="iconfont icon-github"></i></a><a class="social-icon" href="https://weibo.com/u/6337592888/home?wvr=5" target="_blank" title="WeiBo"><i class="iconfont icon-weibo"></i></a><a class="social-icon" href="https://space.bilibili.com/436407790" target="_blank" title="bilibili"><i class="iconfont icon-bilibili-fill"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">新年新气象，今年不挂科</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E7%BD%91%E5%85%B3%E5%92%8C%E8%B7%AF%E7%94%B1"><span class="toc-number">1.</span> <span class="toc-text">服务网关和路由</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E7%BD%91%E5%85%B3"><span class="toc-number">1.1.</span> <span class="toc-text">服务网关</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%A8%AA%E5%88%87%E5%85%B3%E6%B3%A8%E7%82%B9"><span class="toc-number">1.1.1.</span> <span class="toc-text">分布式系统的横切关注点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E7%BD%91%E5%85%B3-1"><span class="toc-number">1.1.2.</span> <span class="toc-text">服务网关</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E7%BD%91%E5%85%B3%E7%9A%84%E5%AE%9E%E7%8E%B0Zuul"><span class="toc-number">1.1.3.</span> <span class="toc-text">服务网关的实现Zuul</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F%E5%85%B3%E7%B3%BB%E5%9B%BE"><span class="toc-number">1.1.4.</span> <span class="toc-text">分布式系统关系图</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%9A%E8%BF%87%E6%9C%8D%E5%8A%A1%E5%8F%91%E7%8E%B0%E8%87%AA%E5%8A%A8%E6%98%A0%E5%B0%84%E8%B7%AF%E7%94%B1"><span class="toc-number">1.1.4.1.</span> <span class="toc-text">通过服务发现自动映射路由</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E6%9C%8D%E5%8A%A1%E5%8F%91%E7%8E%B0%E6%89%8B%E5%8A%A8%E6%98%A0%E5%B0%84%E8%B7%AF%E7%94%B1"><span class="toc-number">1.1.4.2.</span> <span class="toc-text">使用服务发现手动映射路由</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E9%9D%99%E6%80%81URL%E6%89%8B%E5%8A%A8%E6%98%A0%E5%B0%84%E8%B7%AF%E7%94%B1"><span class="toc-number">1.1.4.3.</span> <span class="toc-text">使用静态URL手动映射路由</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8A%A8%E6%80%81%E9%87%8D%E6%96%B0%E5%8A%A0%E8%BD%BD%E8%B7%AF%E7%94%B1%E9%85%8D%E7%BD%AE"><span class="toc-number">1.1.4.4.</span> <span class="toc-text">动态重新加载路由配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E8%B6%85%E6%97%B6"><span class="toc-number">1.1.4.5.</span> <span class="toc-text">设置超时</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%87%E6%BB%A4%E5%99%A8"><span class="toc-number">1.1.5.</span> <span class="toc-text">过滤器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%89%8D%E7%BD%AE%E8%BF%87%E6%BB%A4%E5%99%A8"><span class="toc-number">1.1.5.1.</span> <span class="toc-text">前置过滤器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B7%AF%E7%94%B1%E8%BF%87%E6%BB%A4%E5%99%A8"><span class="toc-number">1.1.5.2.</span> <span class="toc-text">路由过滤器</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8A%A8%E6%80%81%E8%B7%AF%E7%94%B1"><span class="toc-number">1.1.5.2.1.</span> <span class="toc-text">动态路由</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%90%8E%E7%BD%AE%E8%BF%87%E6%BB%A4%E5%99%A8"><span class="toc-number">1.1.5.3.</span> <span class="toc-text">后置过滤器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%87%E6%BB%A4%E5%99%A8%E6%80%BB%E7%BB%93"><span class="toc-number">1.1.5.4.</span> <span class="toc-text">过滤器总结</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B7%E4%BD%93%E5%AE%9E%E7%8E%B0"><span class="toc-number">1.2.</span> <span class="toc-text">具体实现</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#zuulsvr"><span class="toc-number">1.2.1.</span> <span class="toc-text">zuulsvr</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#licensing-service"><span class="toc-number">1.2.2.</span> <span class="toc-text">licensing-service</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/10/14/15-%E6%9C%8D%E5%8A%A1%E7%BD%91%E5%85%B3%E5%92%8C%E8%B7%AF%E7%94%B1/" title="无题"><img data-lazy-src="https://xwksir-1302576567.cos.ap-nanjing.myqcloud.com//imagesIMG_0128.JPG" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2022/10/14/15-%E6%9C%8D%E5%8A%A1%E7%BD%91%E5%85%B3%E5%92%8C%E8%B7%AF%E7%94%B1/" title="无题">无题</a><time datetime="2022-10-14T15:01:14.716Z" title="发表于 2022-10-14 23:01:14">2022-10-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/10/14/14-%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%BC%B9%E6%80%A7%E3%80%81%E6%96%AD%E8%B7%AF%E5%99%A8%E6%A8%A1%E5%BC%8F/" title="无题"><img data-lazy-src="https://xwksir-1302576567.cos.ap-nanjing.myqcloud.com//imagesad668783847950a7b2a83f8d0f9fe19d.JPG" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2022/10/14/14-%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%BC%B9%E6%80%A7%E3%80%81%E6%96%AD%E8%B7%AF%E5%99%A8%E6%A8%A1%E5%BC%8F/" title="无题">无题</a><time datetime="2022-10-14T15:01:14.712Z" title="发表于 2022-10-14 23:01:14">2022-10-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/10/14/13-%E6%9C%8D%E5%8A%A1%E5%8F%91%E7%8E%B0%E3%80%81%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/" title="无题"><img data-lazy-src="https://xwksir-1302576567.cos.ap-nanjing.myqcloud.com//imagesIMG_0128.JPG" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2022/10/14/13-%E6%9C%8D%E5%8A%A1%E5%8F%91%E7%8E%B0%E3%80%81%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/" title="无题">无题</a><time datetime="2022-10-14T15:01:14.708Z" title="发表于 2022-10-14 23:01:14">2022-10-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/10/14/12-%E9%85%8D%E7%BD%AE%E6%9C%8D%E5%8A%A1%E5%8A%A0%E5%AF%86%E6%89%80%E9%9C%80%E8%A6%81%E7%9A%84%E9%95%9C%E5%83%8F%E7%94%9F%E6%88%90%E6%AD%A5%E9%AA%A4/" title="无题"><img data-lazy-src="https://xwksir-1302576567.cos.ap-nanjing.myqcloud.com//images8aca7f08c37fe5908141a0f53bf8559a.PNG" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2022/10/14/12-%E9%85%8D%E7%BD%AE%E6%9C%8D%E5%8A%A1%E5%8A%A0%E5%AF%86%E6%89%80%E9%9C%80%E8%A6%81%E7%9A%84%E9%95%9C%E5%83%8F%E7%94%9F%E6%88%90%E6%AD%A5%E9%AA%A4/" title="无题">无题</a><time datetime="2022-10-14T15:01:14.704Z" title="发表于 2022-10-14 23:01:14">2022-10-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/10/14/12-%E9%85%8D%E7%BD%AE%E6%9C%8D%E5%8A%A1%E3%80%81%E6%9C%8D%E5%8A%A1%E7%BC%96%E6%8E%92/" title="无题"><img data-lazy-src="https://xwksir-1302576567.cos.ap-nanjing.myqcloud.com//images966c1bb0c39118128c04c5c783242d06.JPG" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2022/10/14/12-%E9%85%8D%E7%BD%AE%E6%9C%8D%E5%8A%A1%E3%80%81%E6%9C%8D%E5%8A%A1%E7%BC%96%E6%8E%92/" title="无题">无题</a><time datetime="2022-10-14T15:01:14.699Z" title="发表于 2022-10-14 23:01:14">2022-10-14</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://xwksir-1302576567.cos.ap-nanjing.myqcloud.com//imagesIMG_0128.JPG')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By XWK</div><div class="footer_custom_text"><p><a style="margin-inline:5px"target="_blank" href="https://hexo.io/"><img src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&logo=hexo" title="博客框架为 Hexo" alt="HEXO"></a><a style="margin-inline:5px"target="_blank" href="https://butterfly.js.org/"><img src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&logo=bitdefender" title="主题采用 Butterfly" alt="Butterfly"></a><a style="margin-inline:5px"target="_blank" href="https://www.jsdelivr.com/"><img src="https://img.shields.io/badge/CDN-jsDelivr-orange?style=flat&logo=jsDelivr" title="本站使用 Jsdelivr 为静态资源提供CDN加速" alt="Jsdelivr"></a><a style="margin-inline:5px"target="_blank" href="https://github.com/"><img src="https://img.shields.io/badge/Source-Github-d021d6?style=flat&logo=GitHub" title="本站项目由 GitHub 托管" alt="GitHub"></a><a style="margin-inline:5px"target="_blank"href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&logo=Claris" alt="img" title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可"></a></p><img src="https://xwksir-1302576567.cos.ap-nanjing.myqcloud.com//imagesbeian.png">
+<a href="https://beian.miit.gov.cn/"  style="color:#f72b07" target="_blank">苏ICP备2021017465号</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><div class="js-pjax"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.css"><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', '', 'katex-wrap')
+  })
+})()</script><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: 'S3s2MeXrLm9x95xWMIMfKaKr-gzGzoHsz',
+      appKey: '9dhBtswUIquMic6NtbMVQMSp',
+      placeholder: '来都来了，不说两句？',
+      avatar: 'monsterid',
+      meta: 'nick,mail,link'.split(','),
+      pageSize: '10',
+      lang: 'zh-CN',
+      recordIP: false,
+      serverURLs: '',
+      emojiCDN: '',
+      emojiMaps: "",
+      enableQQ: false,
+      path: window.location.pathname,
+      requiredFields: ["nick,mail"],
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script><script>function loadWaline () {
+  function initWaline () {
+    const waline = new Waline(Object.assign({
+      el: '#waline-wrap',
+      serverURL: '',
+      avatar: 'monsterid',
+      path: location.pathname,
+      emojiCDN: '',
+      emojiMaps: "",
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Waline === 'function') initWaline() 
+  else getScript('https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js').then(initWaline)
+}
+
+if ('Valine' === 'Waline' || !false) {
+  if (false) btf.loadComment(document.getElementById('waline-wrap'),loadWaline)
+  else setTimeout(loadWaline, 0)
+} else {
+  function loadOtherComment () {
+    loadWaline()
+  }
+}</script></div><div class="aplayer no-destroy" data-id="000PeZCQ1i4XVs" data-server="tencent" data-type="artist" data-fixed="true" data-mini="true" data-listFolded="false" data-order="random" data-preload="none" data-autoplay="true" muted></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="true"></script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-show-text.min.js" data-mobile="true" data-text="富强,民主,文明,和谐,自由,平等,公正,法治,爱国,敬业,诚信,友善" data-fontsize="20px" data-random="false" async="async"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = [
+  'title',
+  '#config-diff',
+  '#body-wrap',
+  '#rightside-config-hide',
+  '#rightside-config-show',
+  '.js-pjax'
+]
+
+if (false) {
+  pjaxSelectors.unshift('meta[property="og:image"]', 'meta[property="og:title"]', 'meta[property="og:url"]')
+}
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // Analytics
+  if (false) {
+    MtaH5.pgv()
+  }
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+
+document.addEventListener('pjax:send', function () {
+  typeof preloader === 'object' && preloader.initLoading()
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

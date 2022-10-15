@@ -1,0 +1,399 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>5-Spring Security | What a nice Blog</title><meta name="author"><meta name="copyright"><meta name="format-detection" content="telephone=no"><meta name="theme-color"><meta name="description" content="Spring Security 依赖： 12345678910&lt;dependency&gt; 	&lt;groupId&gt;org.springframework.security&lt;&#x2F;groupId&gt;    &lt;artifactId&gt;spring-security-config&lt;&#x2F;artifactId&gt;    &lt;version&gt;3.2.0.RE">
+<meta property="og:type" content="article">
+<meta property="og:title" content="5-Spring Security">
+<meta property="og:url" content="https://wkxuan.cn/2022/03/20/5-Spring%20Security/index.html">
+<meta property="og:site_name" content="What a nice Blog">
+<meta property="og:description" content="Spring Security 依赖： 12345678910&lt;dependency&gt; 	&lt;groupId&gt;org.springframework.security&lt;&#x2F;groupId&gt;    &lt;artifactId&gt;spring-security-config&lt;&#x2F;artifactId&gt;    &lt;version&gt;3.2.0.RE">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://api.ixiaowai.cn/gqapi/gqapi.php">
+<meta property="article:published_time" content="2022-03-20T05:43:37.000Z">
+<meta property="article:modified_time" content="2022-10-15T11:47:11.554Z">
+<meta property="article:author" content="XWK">
+<meta property="article:tag" content="SpringBoot">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://api.ixiaowai.cn/gqapi/gqapi.php"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://wkxuan.cn/2022/03/20/5-Spring%20Security/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: {"limitDay":180,"position":"top","messagePrev":"这篇文章已经","messageNext":"天没有更新了，相关内容【可能】已经过时，请留意。"},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-10-15 19:47:11'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    })(window)</script><link rel="stylesheet" href="/self/duotone.css"><link rel="stylesheet" href="/css/xwksir.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/css/icon.css" media="defer" onload="this.media='all'"><meta name="generator" content="Hexo 5.4.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" data-lazy-src="https://xwksir-1302576567.cos.ap-nanjing.myqcloud.com/images/pig (2).jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">48</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">24</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 清单</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://api.ixiaowai.cn/gqapi/gqapi.php')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">What a nice Blog</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 清单</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">5-Spring Security</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-03-20T05:43:37.000Z" title="发表于 2022-03-20 13:43:37">2022-03-20</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-10-15T11:47:11.554Z" title="更新于 2022-10-15 19:47:11">2022-10-15</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="5-Spring Security"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/2022/03/20/5-Spring%20Security/#post-comment" itemprop="discussionUrl"><span class="valine-comment-count" data-xid="/2022/03/20/5-Spring%20Security/" itemprop="commentCount"></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="Spring-Security"><a href="#Spring-Security" class="headerlink" title="Spring Security"></a>Spring Security</h1><blockquote>
+<p>依赖：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br> 	<span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.security<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-security-config<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>3.2.0.RELEASE<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.security<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-security-web<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>3.2.0.RELEASE<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+
+</blockquote>
+<h2 id="使用Spring-Security的请求拦截"><a href="#使用Spring-Security的请求拦截" class="headerlink" title="使用Spring Security的请求拦截"></a>使用Spring Security的请求拦截</h2><ul>
+<li><p>定义<code>SecurityWebInitializer</code>继承<code>AbstractSecurityWebApplicationInitializer</code>就可以了（类体可以为空）</p>
+<p>  <img src= "/img/loading.gif" data-lazy-src="https://gitee.com/xwklib/image-host/raw/master/Picgo/image-20220320222806331.png" alt="image-20220320222806331"></p>
+</li>
+</ul>
+<h2 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h2><p><strong><code>@EnableWebMvcSecurity</code></strong></p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://gitee.com/xwklib/image-host/raw/master/Picgo/image-20220321174115379.png" alt="image-20220321174115379"></p>
+<ol>
+<li><p>登录</p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java">.formLogin()<br>        .loginPage(<span class="hljs-string">&quot;/login&quot;</span>)<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><p>访问登录页面时使用自己的login.html。</p>
+</li>
+<li><p>如果将<code>.loginPage(&quot;/login&quot;)</code>注释掉，会使用security自带的页面</p>
+</li>
+<li><p>如果将<code>.formLogin()</code>也注释掉，会直接跳出弹窗要求登录（就不是页面了）</p>
+</li>
+</ul>
+</li>
+<li><p>页面拦截</p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java">.authorizeRequests()<br>        .antMatchers(<span class="hljs-string">&quot;/&quot;</span>).hasAnyRole(<span class="hljs-string">&quot;USER&quot;</span>)<br>        .antMatchers(<span class="hljs-string">&quot;/spitter/me&quot;</span>).authenticated()<br>        .antMatchers(HttpMethod.POST, <span class="hljs-string">&quot;/spittles&quot;</span>).authenticated()<br>        .anyRequest().permitAll()<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>访问根页面需要”USER”角色的登录（一个字符串，可以自定义），否则会重定向到”/login”页面</li>
+<li>访问”/spitter/me”需要认证（也就是登录，但是不指定角色）</li>
+<li>“/spittles”的POST请求需要认证</li>
+<li><code>.anyRequest().permitAll()</code>其他所有页面都可以不登录访问</li>
+</ul>
+</li>
+<li><p>https配置</p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//    .and()</span><br><span class="hljs-comment">//            .requiresChannel()</span><br><span class="hljs-comment">//            .antMatchers(&quot;/spitter/register&quot;).requiresSecure() </span><br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><p>解析：针对该页面需要创建https安全通道，否则不允许通信</p>
+</li>
+<li><p>效果：访问<code>ip:8080/section5/spitter/register</code>页面时，会自动跳转至<code>ip:8443/section5/spitter/register</code>，而Tomcat默认不开放8443端口，所以无法访问</p>
+</li>
+<li><p>如何使用：复制打包的<code>war包</code>到Tomcat的<code>webapps</code>目录中，并打开<code>conf/sever.xml</code>配置文件</p>
+<p>  <del>将如下代码取消注释（默认是注释状态）</del></p>
+  <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">Connector</span> <span class="hljs-attr">port</span>=<span class="hljs-string">&quot;8443&quot;</span> <span class="hljs-attr">protocol</span>=<span class="hljs-string">&quot;org.apache.coyote.http11.Http11NioProtocol&quot;</span></span><br><span class="hljs-tag">               <span class="hljs-attr">maxThreads</span>=<span class="hljs-string">&quot;150&quot;</span> <span class="hljs-attr">SSLEnabled</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">SSLHostConfig</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">Certificate</span> <span class="hljs-attr">certificateKeystoreFile</span>=<span class="hljs-string">&quot;conf/localhost-rsa.jks&quot;</span></span><br><span class="hljs-tag">                     <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;RSA&quot;</span> /&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">SSLHostConfig</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">Connector</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>  ==正确方式：==</p>
+<p>  在以上代码（依然保持注释）的后面加上如下配置：</p>
+  <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">Connector</span> <span class="hljs-attr">port</span>=<span class="hljs-string">&quot;8443&quot;</span> <span class="hljs-attr">protocol</span>=<span class="hljs-string">&quot;org.apache.coyote.http11.Http11NioProtocol&quot;</span></span><br><span class="hljs-tag">           <span class="hljs-attr">maxThreads</span>=<span class="hljs-string">&quot;150&quot;</span> <span class="hljs-attr">SSLEnabled</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">schema</span>=<span class="hljs-string">&quot;https&quot;</span> <span class="hljs-attr">secure</span>=<span class="hljs-string">&quot;true&quot;</span></span><br><span class="hljs-tag">           <span class="hljs-attr">clientAuth</span>=<span class="hljs-string">&quot;false&quot;</span> <span class="hljs-attr">sslProtocol</span>=<span class="hljs-string">&quot;TLS&quot;</span></span><br><span class="hljs-tag">           <span class="hljs-attr">keystoreFile</span>=<span class="hljs-string">&quot;C:\\key\mytomcat.keystore&quot;</span> <span class="hljs-attr">keystorePass</span>=<span class="hljs-string">&quot;Workflow20&quot;</span></span><br><span class="hljs-tag">           <span class="hljs-attr">truststoreFile</span>=<span class="hljs-string">&quot;C:\\key\mytomcat.keystore&quot;</span> <span class="hljs-attr">truststorePass</span>=<span class="hljs-string">&quot;Workflow20&quot;</span>/&gt;</span><br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>keystoreFile：私钥</p>
+<p>keystorePass：口令</p>
+<p>truststoreFile：公钥</p>
+<p>truststorePass：口令</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>跨站请求伪造（CSRF，Cross-site request forgery）</p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//    .and().csrf().disable()</span><br></code></pre></td></tr></table></figure>
+
+<p> 默认是开启的，除非指定disable()</p>
+<ul>
+<li>效果：防止别的网站拿到cookie后发送假请求</li>
+<li>Postman如何使用：发送的body中使用form-data，添加字段<code>_csrf</code>，字段值可以用get请求原页面获取（F12搜索），其他的如username、password正常填写即可</li>
+</ul>
+</li>
+<li><p>用户账号密码</p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Override</span><br>  <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">configure</span><span class="hljs-params">(AuthenticationManagerBuilder auth)</span> <span class="hljs-keyword">throws</span> Exception </span>&#123;<br>    auth<br>      .inMemoryAuthentication()<br>        .withUser(<span class="hljs-string">&quot;user&quot;</span>).password(<span class="hljs-string">&quot;password&quot;</span>).roles(<span class="hljs-string">&quot;USER&quot;</span>);<br>  &#125;<br></code></pre></td></tr></table></figure>
+
+<p> 这里是写死在内存里的账号密码，也可以用关系型数据库里的，代码如下：</p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Autowired</span><br><span class="hljs-keyword">private</span> DataSource dataSource;<br><br><span class="hljs-meta">@Override</span><br><span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">configure</span><span class="hljs-params">(AuthenticationManagerBuilder auth)</span> <span class="hljs-keyword">throws</span> Exception </span>&#123;<br>    <span class="hljs-comment">//    auth</span><br>    <span class="hljs-comment">//      .inMemoryAuthentication()</span><br>    <span class="hljs-comment">//        .withUser(&quot;user&quot;).password(&quot;password&quot;).roles(&quot;USER&quot;);</span><br><br>    auth.jdbcAuthentication()<br>        .dataSource(dataSource)<br>        .usersByUsernameQuery(<br>        	<span class="hljs-string">&quot;select username,password,true from Spitter where username=? &quot;</span>)<br>        .authoritiesByUsernameQuery(<br>        	<span class="hljs-string">&quot;select username,&#x27;ROLE_USER&#x27; from Spitter where username=?&quot;</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>注：这里的dataSource已经在DataConfig中进行配置了</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="权限控制"><a href="#权限控制" class="headerlink" title="权限控制"></a>权限控制</h2><ul>
+<li><p>JSP标签库</p>
+</li>
+<li><p>Thymeleaf的方言</p>
+  <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.thymeleaf.extras<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>thymeleaf-extras-springsecurity3<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>2.1.1.RELEASE<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>  <code>templateEngine.addDialect(new SpringSecurityDialect());</code></p>
+</li>
+</ul>
+<h2 id="保护方法的配置"><a href="#保护方法的配置" class="headerlink" title="保护方法的配置"></a>保护方法的配置</h2><h3 id="方法一：Spring自带注解"><a href="#方法一：Spring自带注解" class="headerlink" title="方法一：Spring自带注解"></a>方法一：Spring自带注解</h3><ol>
+<li><p>创建<code>SecuredConfig</code>继承自<code>GlobalMethodSecurityConfiguration</code>并添加注解<code>@EnableGlobalMethodSecurity(securedEnabled=true)</code>，然后创建一个bean</p>
+<p> 代码如下：</p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Configuration</span><br><span class="hljs-meta">@EnableGlobalMethodSecurity(securedEnabled=true)</span><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SecuredConfig</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">GlobalMethodSecurityConfiguration</span> </span>&#123;<br><br>  <span class="hljs-meta">@Override</span><br>  <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">configure</span><span class="hljs-params">(AuthenticationManagerBuilder auth)</span> <span class="hljs-keyword">throws</span> Exception </span>&#123;<br>    auth<br>    .inMemoryAuthentication()<br>      .withUser(<span class="hljs-string">&quot;user&quot;</span>).password(<span class="hljs-string">&quot;password&quot;</span>).roles(<span class="hljs-string">&quot;USER&quot;</span>);<br>  &#125;<br>  <br>  <span class="hljs-meta">@Bean</span><br>  <span class="hljs-function"><span class="hljs-keyword">public</span> SpittleService <span class="hljs-title">spitterService</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> SecuredSpittleService();<br>  &#125;<br><br>&#125;<br></code></pre></td></tr></table></figure></li>
+<li><p>在bean中，对需要控制权限的方法添加注解<code>@Secured(&#123;&quot;s1&quot;,&quot;s2&quot;...&#125;)</code></p>
+<p> 示例如下：</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SecuredSpittleService</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">SpittleService</span> </span>&#123;<br><br>  <span class="hljs-meta">@Override</span><br>  <span class="hljs-meta">@Secured(&#123;&quot;ROLE_SPITTER&quot;, &quot;ROLE_ADMIN&quot;&#125;)</span><br>  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">addSpittle</span><span class="hljs-params">(Spittle spittle)</span> </span>&#123;<br>    System.out.println(<span class="hljs-string">&quot;Method was called successfully&quot;</span>);<br>  &#125;<br>  <br>&#125;<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p> 注意角色之间是<strong>或</strong>的关系</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="方法二：JSR-250"><a href="#方法二：JSR-250" class="headerlink" title="方法二：JSR-250"></a>方法二：JSR-250</h3><ol>
+<li>将方法一中的Config的注解换成<code>@EnableGlobalMethodSecurity(jsr250Enabled=true)</code></li>
+<li>bean的注解换成<code>@RolesAllowed(&quot;ROLE_SPITTER&quot;)</code></li>
+</ol>
+<h3 id="方法三：表达式驱动的注解"><a href="#方法三：表达式驱动的注解" class="headerlink" title="方法三：表达式驱动的注解"></a>方法三：表达式驱动的注解</h3><ol>
+<li><p>注解换成<code>@EnableGlobalMethodSecurity(prePostEnabled=true)</code></p>
+</li>
+<li><p>bean中的方法的注解换成<code>@PreAuthorize(&quot;(hasRole(&#39;ROLE_SPITTER&#39;) and #spittle.text.length() le 140) or hasRole(&#39;ROLE_PREMIUM&#39;)&quot;)</code></p>
+<blockquote>
+<p>其中参数的叫SpeL表达式，感兴趣可以自行搜索</p>
+</blockquote>
+</li>
+</ol>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">XWK</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://wkxuan.cn/2022/03/20/5-Spring%20Security/">https://wkxuan.cn/2022/03/20/5-Spring%20Security/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://wkxuan.cn" target="_blank">What a nice Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/SpringBoot/">SpringBoot</a></div><div class="post_share"><div class="social-share" data-image="https://api.ixiaowai.cn/gqapi/gqapi.php" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button button--animated"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="https://xwksir-1302576567.cos.ap-nanjing.myqcloud.com//imagesweixin.png" target="_blank"><img class="post-qr-code-img" data-lazy-src="https://xwksir-1302576567.cos.ap-nanjing.myqcloud.com//imagesweixin.png" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://xwksir-1302576567.cos.ap-nanjing.myqcloud.com//imagesalipay.png" target="_blank"><img class="post-qr-code-img" data-lazy-src="https://xwksir-1302576567.cos.ap-nanjing.myqcloud.com//imagesalipay.png" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/03/20/4-Web%E5%BC%80%E5%8F%91%E6%A1%86%E6%9E%B6/"><img class="prev-cover" data-lazy-src="https://tuapi.eees.cc/api.php?category=fengjing" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">4-Web开发框架</div></div></a></div><div class="next-post pull-right"><a href="/2022/03/20/1-%E4%BD%BF%E7%94%A8Idea/"><img class="next-cover" data-lazy-src="https://api.ixiaowai.cn/gqapi/gqapi.php" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">1-使用Idea</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2022/01/14/10-Docker/" title="10-Docker"><img class="cover" data-lazy-src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="fas fa-history fa-fw"></i> 2022-10-15</div><div class="title">10-Docker</div></div></a></div><div><a href="/2022/01/14/10-复习/" title="10-复习"><img class="cover" data-lazy-src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="fas fa-history fa-fw"></i> 2022-10-15</div><div class="title">10-复习</div></div></a></div><div><a href="/2022/04/16/12-配置服务、服务编排/" title="12-配置服务、服务编排"><img class="cover" data-lazy-src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="fas fa-history fa-fw"></i> 2022-10-15</div><div class="title">12-配置服务、服务编排</div></div></a></div><div><a href="/2022/04/15/11-微服务、SpringBoot、服务镜像生成/" title="11-微服务、SpringBoot、服务镜像生成"><img class="cover" data-lazy-src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="fas fa-history fa-fw"></i> 2022-10-15</div><div class="title">11-微服务、SpringBoot、服务镜像生成</div></div></a></div><div><a href="/2022/04/16/12-配置服务加密所需要的镜像生成步骤/" title="12-配置服务加密所需要的镜像生成步骤"><img class="cover" data-lazy-src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="fas fa-history fa-fw"></i> 2022-10-15</div><div class="title">12-配置服务加密所需要的镜像生成步骤</div></div></a></div><div><a href="/2022/04/17/13-服务发现、负载均衡/" title="13-服务发现、负载均衡"><img class="cover" data-lazy-src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="fas fa-history fa-fw"></i> 2022-10-15</div><div class="title">13-服务发现、负载均衡</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div><div id="comment-switch"><span class="first-comment">Valine</span><span class="switch-btn"></span><span class="second-comment">Waline</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div><div><div id="waline-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" data-lazy-src="https://xwksir-1302576567.cos.ap-nanjing.myqcloud.com/images/pig (2).jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">XWK</div><div class="author-info__description">哈哈哈哈哈哈哈哈</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">48</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">24</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xwklib"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2532560155&amp;site=qq&amp;menu=yes" target="_blank" title="QQ"><i class="iconfont icon-qq"></i></a><a class="social-icon" href="https://github.com/xwklib" target="_blank" title="Github"><i class="iconfont icon-github"></i></a><a class="social-icon" href="https://weibo.com/u/6337592888/home?wvr=5" target="_blank" title="WeiBo"><i class="iconfont icon-weibo"></i></a><a class="social-icon" href="https://space.bilibili.com/436407790" target="_blank" title="bilibili"><i class="iconfont icon-bilibili-fill"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">不定期更新</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Spring-Security"><span class="toc-number">1.</span> <span class="toc-text">Spring Security</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8Spring-Security%E7%9A%84%E8%AF%B7%E6%B1%82%E6%8B%A6%E6%88%AA"><span class="toc-number">1.1.</span> <span class="toc-text">使用Spring Security的请求拦截</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E4%BB%A3%E7%A0%81"><span class="toc-number">1.2.</span> <span class="toc-text">核心代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6"><span class="toc-number">1.3.</span> <span class="toc-text">权限控制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%9D%E6%8A%A4%E6%96%B9%E6%B3%95%E7%9A%84%E9%85%8D%E7%BD%AE"><span class="toc-number">1.4.</span> <span class="toc-text">保护方法的配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E4%B8%80%EF%BC%9ASpring%E8%87%AA%E5%B8%A6%E6%B3%A8%E8%A7%A3"><span class="toc-number">1.4.1.</span> <span class="toc-text">方法一：Spring自带注解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E4%BA%8C%EF%BC%9AJSR-250"><span class="toc-number">1.4.2.</span> <span class="toc-text">方法二：JSR-250</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E4%B8%89%EF%BC%9A%E8%A1%A8%E8%BE%BE%E5%BC%8F%E9%A9%B1%E5%8A%A8%E7%9A%84%E6%B3%A8%E8%A7%A3"><span class="toc-number">1.4.3.</span> <span class="toc-text">方法三：表达式驱动的注解</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/04/20/16-Spring%20Cloud%20Security%E4%B8%8EOAuth2/" title="16-Spring Cloud Security与OAuth2">16-Spring Cloud Security与OAuth2</a><time datetime="2022-04-19T16:11:47.000Z" title="发表于 2022-04-20 00:11:47">2022-04-20</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/04/18/15-%E6%9C%8D%E5%8A%A1%E7%BD%91%E5%85%B3%E5%92%8C%E8%B7%AF%E7%94%B1/" title="15-服务网关和路由">15-服务网关和路由</a><time datetime="2022-04-18T08:08:58.000Z" title="发表于 2022-04-18 16:08:58">2022-04-18</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/04/17/14-%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%BC%B9%E6%80%A7%E3%80%81%E6%96%AD%E8%B7%AF%E5%99%A8%E6%A8%A1%E5%BC%8F/" title="14-客户端弹性、断路器模式">14-客户端弹性、断路器模式</a><time datetime="2022-04-17T13:55:24.000Z" title="发表于 2022-04-17 21:55:24">2022-04-17</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/04/17/13-%E6%9C%8D%E5%8A%A1%E5%8F%91%E7%8E%B0%E3%80%81%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/" title="13-服务发现、负载均衡">13-服务发现、负载均衡</a><time datetime="2022-04-17T10:26:57.000Z" title="发表于 2022-04-17 18:26:57">2022-04-17</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/04/16/12-%E9%85%8D%E7%BD%AE%E6%9C%8D%E5%8A%A1%E3%80%81%E6%9C%8D%E5%8A%A1%E7%BC%96%E6%8E%92/" title="12-配置服务、服务编排">12-配置服务、服务编排</a><time datetime="2022-04-16T08:19:16.000Z" title="发表于 2022-04-16 16:19:16">2022-04-16</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://api.ixiaowai.cn/gqapi/gqapi.php')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By XWK</div><div class="footer_custom_text"><p><a style="margin-inline:5px"target="_blank" href="https://hexo.io/"><img src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&logo=hexo" title="博客框架为 Hexo" alt="HEXO"></a><a style="margin-inline:5px"target="_blank" href="https://butterfly.js.org/"><img src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&logo=bitdefender" title="主题采用 Butterfly" alt="Butterfly"></a><a style="margin-inline:5px"target="_blank" href="https://www.jsdelivr.com/"><img src="https://img.shields.io/badge/CDN-jsDelivr-orange?style=flat&logo=jsDelivr" title="本站使用 Jsdelivr 为静态资源提供CDN加速" alt="Jsdelivr"></a><a style="margin-inline:5px"target="_blank" href="https://github.com/"><img src="https://img.shields.io/badge/Source-Github-d021d6?style=flat&logo=GitHub" title="本站项目由 GitHub 托管" alt="GitHub"></a><a style="margin-inline:5px"target="_blank"href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&logo=Claris" alt="img" title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可"></a></p><img src="https://xwksir-1302576567.cos.ap-nanjing.myqcloud.com//imagesbeian.png">
+<a href="https://beian.miit.gov.cn/"  style="color:#f72b07" target="_blank">苏ICP备2021017465号</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><div class="js-pjax"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.css"><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', '', 'katex-wrap')
+  })
+})()</script><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: 'S3s2MeXrLm9x95xWMIMfKaKr-gzGzoHsz',
+      appKey: '9dhBtswUIquMic6NtbMVQMSp',
+      placeholder: '来都来了，不说两句？',
+      avatar: 'monsterid',
+      meta: 'nick,mail,link'.split(','),
+      pageSize: '10',
+      lang: 'zh-CN',
+      recordIP: false,
+      serverURLs: '',
+      emojiCDN: '',
+      emojiMaps: "",
+      enableQQ: false,
+      path: window.location.pathname,
+      requiredFields: ["nick,mail"],
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script><script>function loadWaline () {
+  function initWaline () {
+    const waline = new Waline(Object.assign({
+      el: '#waline-wrap',
+      serverURL: '',
+      avatar: 'monsterid',
+      path: location.pathname,
+      emojiCDN: '',
+      emojiMaps: "",
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Waline === 'function') initWaline() 
+  else getScript('https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js').then(initWaline)
+}
+
+if ('Valine' === 'Waline' || !false) {
+  if (false) btf.loadComment(document.getElementById('waline-wrap'),loadWaline)
+  else setTimeout(loadWaline, 0)
+} else {
+  function loadOtherComment () {
+    loadWaline()
+  }
+}</script></div><div class="aplayer no-destroy" data-id="000PeZCQ1i4XVs" data-server="tencent" data-type="artist" data-fixed="true" data-mini="true" data-listFolded="false" data-order="random" data-preload="none" data-autoplay="true" muted></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="true"></script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-show-text.min.js" data-mobile="true" data-text="富强,民主,文明,和谐,自由,平等,公正,法治,爱国,敬业,诚信,友善" data-fontsize="20px" data-random="false" async="async"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = [
+  'title',
+  '#config-diff',
+  '#body-wrap',
+  '#rightside-config-hide',
+  '#rightside-config-show',
+  '.js-pjax'
+]
+
+if (false) {
+  pjaxSelectors.unshift('meta[property="og:image"]', 'meta[property="og:title"]', 'meta[property="og:url"]')
+}
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // Analytics
+  if (false) {
+    MtaH5.pgv()
+  }
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+
+document.addEventListener('pjax:send', function () {
+  typeof preloader === 'object' && preloader.initLoading()
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
